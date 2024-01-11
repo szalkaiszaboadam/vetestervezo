@@ -12,7 +12,7 @@ namespace vetestervezo
 
     internal class Program
     {
-        // usage: WriteColor("This is my [message] with inline [color] changes.", ConsoleColor.Yellow);
+        /*// usage: WriteColor("This is my [message] with inline [color] changes.", ConsoleColor.Yellow);
         static void WriteColor(string message, ConsoleColor color)
         {
             var pieces = Regex.Split(message, @"(\[[^\]]*\])");
@@ -32,17 +32,54 @@ namespace vetestervezo
             }
 
             Console.WriteLine();
+        }*/
+
+        int Height = 15;
+        int Width = 20;
+
+        public void WriteBorad()
+        {
+            Console.Clear();
+            for (int i = 1; i <=(Width+2) ; i++)
+            {
+                Console.SetCursorPosition(i, 1);
+                Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("X");
+            }
+            for (int i = 1; i <= (Width + 2); i++)
+            {
+                Console.SetCursorPosition(i, (Height+2));
+                Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("X");
+            }
+            for (int i = 1; i <= (Height + 1); i++)
+            {
+                Console.SetCursorPosition(1, i);
+                Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("X");
+            }
+            for (int i = 1; i <= (Height + 1); i++)
+            {
+                Console.SetCursorPosition((Width+2), i);
+                Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("X");
+            }
+
+            Console.ResetColor();
         }
 
         static void Main(string[] args)
         {
-            Console.BackgroundColor = ConsoleColor.Blue; Console.Write(" ");
+            
+            Program tabla = new Program();
+            tabla.WriteBorad();
+            
+            
+            
+            
+            //Console.BackgroundColor = ConsoleColor.Blue; Console.Write(" ");
             //Console.ForegroundColor = ConsoleColor.White;
 
-            Console.ResetColor(); Console.BackgroundColor = ConsoleColor.Red; Console.Write(" ");
+            //Console.ResetColor(); Console.BackgroundColor = ConsoleColor.Red; Console.Write(" ");
 
 
-            WriteColor("This is my [message] with inline [color] changes.", ConsoleColor.Yellow);
+            //WriteColor("This is my [message] with inline [color] changes.", ConsoleColor.Yellow);
 
             Console.ReadKey();
         }
