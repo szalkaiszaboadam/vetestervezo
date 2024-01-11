@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace vetestervezo
 {
+
+    //https://www.youtube.com/watch?app=desktop&v=_GmjXi1kcHA
+
     internal class Program
     {
         // usage: WriteColor("This is my [message] with inline [color] changes.", ConsoleColor.Yellow);
@@ -44,4 +47,6 @@ namespace vetestervezo
             Console.ReadKey();
         }
     }
+
+
 }

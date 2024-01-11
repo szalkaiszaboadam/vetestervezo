@@ -6,3 +6,11 @@ C:\Users\Szalkai-SzaboAdam\Documents\GitHub\vetestervezo\vetestervezo\obj\Debug\
 C:\Users\Szalkai-SzaboAdam\Documents\GitHub\vetestervezo\vetestervezo\obj\Debug\vetestervezo.csproj.CoreCompileInputs.cache
 C:\Users\Szalkai-SzaboAdam\Documents\GitHub\vetestervezo\vetestervezo\obj\Debug\vetestervezo.exe
 C:\Users\Szalkai-SzaboAdam\Documents\GitHub\vetestervezo\vetestervezo\obj\Debug\vetestervezo.pdb
+C:\Users\Szalkai-Szabó Ádám\Documents\GitHub\vetestervezo\vetestervezo\bin\Debug\vetestervezo.exe.config
+C:\Users\Szalkai-Szabó Ádám\Documents\GitHub\vetestervezo\vetestervezo\bin\Debug\vetestervezo.exe
+C:\Users\Szalkai-Szabó Ádám\Documents\GitHub\vetestervezo\vetestervezo\bin\Debug\vetestervezo.pdb
+C:\Users\Szalkai-Szabó Ádám\Documents\GitHub\vetestervezo\vetestervezo\obj\Debug\vetestervezo.csproj.AssemblyReference.cache
+C:\Users\Szalkai-Szabó Ádám\Documents\GitHub\vetestervezo\vetestervezo\obj\Debug\vetestervezo.csproj.SuggestedBindingRedirects.cache
+C:\Users\Szalkai-Szabó Ádám\Documents\GitHub\vetestervezo\vetestervezo\obj\Debug\vetestervezo.csproj.CoreCompileInputs.cache
+C:\Users\Szalkai-Szabó Ádám\Documents\GitHub\vetestervezo\vetestervezo\obj\Debug\vetestervezo.exe
+C:\Users\Szalkai-Szabó Ádám\Documents\GitHub\vetestervezo\vetestervezo\obj\Debug\vetestervezo.pdb
