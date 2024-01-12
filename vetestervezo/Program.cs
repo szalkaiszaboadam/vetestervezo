@@ -11,8 +11,8 @@ namespace vetestevezo
     {
         static void Main(string[] args)
         {
-            Console.WindowHeight = 16;
-            Console.WindowWidth = 32;
+            Console.WindowHeight = 10;
+            Console.WindowWidth = 20;
             int screenwidth = Console.WindowWidth;
             int screenheight = Console.WindowHeight;
             Random randomnummer = new Random();
@@ -65,10 +65,12 @@ namespace vetestevezo
                 }
                 Console.SetCursorPosition(hoofd.xpos, hoofd.ypos);
                 Console.ForegroundColor = hoofd.schermkleur;
-                Console.Write("■");
+                 Console.Write("a");
+                //Console.BackgroundColor = ConsoleColor.Blue;
                 Console.SetCursorPosition(berryx, berryy);
                 Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.Write("■");
+
+                Console.Write("B");
                 Console.CursorVisible = false;
                 tijd = DateTime.Now;
                 buttonpressed = "no";
@@ -146,16 +148,16 @@ namespace vetestevezo
             var horizontalBar = string.Join("", new byte[screenwidth].Select(b => "■").ToArray());
 
             Console.SetCursorPosition(0, 0);
-            Console.Write(horizontalBar);
+            Console.ForegroundColor = ConsoleColor.White; Console.BackgroundColor = ConsoleColor.White;  Console.Write(horizontalBar);
             Console.SetCursorPosition(0, screenheight - 1);
-            Console.Write(horizontalBar);
+            Console.ForegroundColor = ConsoleColor.White; Console.BackgroundColor = ConsoleColor.White;  Console.Write(horizontalBar);
 
             for (int i = 0; i < screenheight; i++)
             {
                 Console.SetCursorPosition(0, i);
-                Console.Write("■");
+                Console.ForegroundColor = ConsoleColor.White; Console.BackgroundColor = ConsoleColor.White; Console.Write("■");
                 Console.SetCursorPosition(screenwidth - 1, i);
-                Console.Write("■");
+                Console.ForegroundColor = ConsoleColor.White; Console.BackgroundColor = ConsoleColor.White; Console.Write("■");
             }
         }
 
