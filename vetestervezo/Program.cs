@@ -16,17 +16,17 @@ namespace vetestevezo
             int screenwidth = Console.WindowWidth;
             int screenheight = Console.WindowHeight;
             Random randomnummer = new Random();
-            int score = 5;
+            int score = 1;
             int gameover = 0;
             pixel hoofd = new pixel();
             hoofd.xpos = screenwidth / 2;
             hoofd.ypos = screenheight / 2;
-            hoofd.schermkleur = ConsoleColor.Red;
+            //hoofd.schermkleur = ConsoleColor.Red;
             string movement = "RIGHT";
             List<int> xposlijf = new List<int>();
             List<int> yposlijf = new List<int>();
-            int berryx = randomnummer.Next(0, screenwidth);
-            int berryy = randomnummer.Next(0, screenheight);
+            int berryx = 1;//randomnummer.Next(0, screenwidth);
+            int berryy = 1;//randomnummer.Next(0, screenheight);
             DateTime tijd = DateTime.Now;
             DateTime tijd2 = DateTime.Now;
             string buttonpressed = "no";
@@ -36,7 +36,7 @@ namespace vetestevezo
 
             while (true)
             {
-                ClearConsole(screenwidth, screenheight);
+                //ClearConsole(screenwidth, screenheight);
                 if (hoofd.xpos == screenwidth - 1 || hoofd.xpos == 0 || hoofd.ypos == screenheight - 1 || hoofd.ypos == 0)
                 {
                     gameover = 1;
@@ -45,14 +45,14 @@ namespace vetestevezo
                 Console.ForegroundColor = ConsoleColor.Green;
                 if (berryx == hoofd.xpos && berryy == hoofd.ypos)
                 {
-                    score++;
-                    berryx = randomnummer.Next(1, screenwidth - 2);
-                    berryy = randomnummer.Next(1, screenheight - 2);
+                    //score++;
+                    berryx++;//randomnummer.Next(1, screenwidth - 2);
+                    berryy = 1;//randomnummer.Next(1, screenheight - 2);
                 }
                 for (int i = 0; i < xposlijf.Count(); i++)
                 {
                     Console.SetCursorPosition(xposlijf[i], yposlijf[i]);
-                    Console.Write("¦");
+                    Console.Write("*");
                     if (xposlijf[i] == hoofd.xpos && yposlijf[i] == hoofd.ypos)
                     {
                         gameover = 1;
@@ -64,13 +64,14 @@ namespace vetestevezo
                     break;
                 }
                 Console.SetCursorPosition(hoofd.xpos, hoofd.ypos);
-                Console.ForegroundColor = hoofd.schermkleur;
-                 Console.Write("a");
+                Console.ForegroundColor = ConsoleColor.Red;//hoofd.schermkleur;
+                 Console.Write(".");
                 //Console.BackgroundColor = ConsoleColor.Blue;
+
+
                 Console.SetCursorPosition(berryx, berryy);
                 Console.ForegroundColor = ConsoleColor.Cyan;
-
-                Console.Write("B");
+                Console.Write("#");
                 Console.CursorVisible = false;
                 tijd = DateTime.Now;
                 buttonpressed = "no";
@@ -104,8 +105,8 @@ namespace vetestevezo
                         }
                     }
                 }
-                xposlijf.Add(hoofd.xpos);
-                yposlijf.Add(hoofd.ypos);
+                //xposlijf.Add(hoofd.xpos);
+                //yposlijf.Add(hoofd.ypos);
                 switch (movement)
                 {
                     case "UP":
@@ -132,7 +133,7 @@ namespace vetestevezo
             Console.SetCursorPosition(screenwidth / 5, screenheight / 2 + 1);
         }
 
-        private static void ClearConsole(int screenwidth, int screenheight)
+        /*private static void ClearConsole(int screenwidth, int screenheight)
         {
             var blackLine = string.Join("", new byte[screenwidth - 2].Select(b => " ").ToArray());
             Console.ForegroundColor = ConsoleColor.Black;
@@ -141,11 +142,11 @@ namespace vetestevezo
                 Console.SetCursorPosition(1, i);
                 Console.Write(blackLine);
             }
-        }
+        }*/
 
         private static void DrawBorder(int screenwidth, int screenheight)
         {
-            var horizontalBar = string.Join("", new byte[screenwidth].Select(b => "■").ToArray());
+            var horizontalBar = string.Join("", new byte[screenwidth].Select(b => "X").ToArray());
 
             Console.SetCursorPosition(0, 0);
             Console.ForegroundColor = ConsoleColor.White; Console.BackgroundColor = ConsoleColor.White;  Console.Write(horizontalBar);
@@ -155,9 +156,9 @@ namespace vetestevezo
             for (int i = 0; i < screenheight; i++)
             {
                 Console.SetCursorPosition(0, i);
-                Console.ForegroundColor = ConsoleColor.White; Console.BackgroundColor = ConsoleColor.White; Console.Write("■");
+                Console.ForegroundColor = ConsoleColor.White; Console.BackgroundColor = ConsoleColor.White; Console.Write("X");
                 Console.SetCursorPosition(screenwidth - 1, i);
-                Console.ForegroundColor = ConsoleColor.White; Console.BackgroundColor = ConsoleColor.White; Console.Write("■");
+                Console.ForegroundColor = ConsoleColor.White; Console.BackgroundColor = ConsoleColor.White; Console.Write("X");
             }
         }
 
