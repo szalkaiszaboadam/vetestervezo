@@ -19,3 +19,4 @@ C:\Users\Szalkai-SzaboAdam\Documents\GitHub\vetestervezo\vetestervezo\bin\Debug\
 C:\Users\Szalkai-SzaboAdam\Documents\GitHub\vetestervezo\vetestervezo\bin\Debug\Spire.Pdf.xml
 C:\Users\Szalkai-SzaboAdam\Documents\GitHub\vetestervezo\vetestervezo\bin\Debug\Spire.XLS.xml
 C:\Users\Szalkai-SzaboAdam\Documents\GitHub\vetestervezo\vetestervezo\obj\Debug\vetestervezo.csproj.CopyComplete
+C:\Users\Szalkai-SzaboAdam\Documents\GitHub\vetestervezo\vetestervezo\obj\Debug\vetestervezo.csproj.SuggestedBindingRedirects.cache
