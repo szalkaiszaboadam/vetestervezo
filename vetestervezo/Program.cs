@@ -1,35 +1,33 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace kerstboom
+namespace vetestervezo
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            // Enter Height //
-            Console.WriteLine("Enter desired height:");
-            // Read number entered //
-            int n = int.Parse(Console.ReadLine());
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			int h, w;
+			Console.Write("magasság");
+			h=Convert.ToInt32(Console.ReadLine());
+            Console.Write("szélesség:");
+			w=Convert.ToInt32(Console.ReadLine());
 
-            String stars = "";
-            String spaces = "";
 
-            for (int i = 0; i <= n; i++)
-            {
-                stars = new string('*', i);
-                spaces = new string(' ', n - i);
-                Console.Write(spaces);
-                Console.Write(stars);
-                Console.Write("*");
-                Console.Write(stars);
-                Console.WriteLine(spaces);
+			for (int i = 0; i <= h; i++)
+			{
+				for (int j = 1; j < w; j++)
+				{
+                    Console.Write("*");
+                }
+                Console.WriteLine();
             }
 
-            spaces = new string(' ', stars.Length + spaces.Length);
-            Console.Write(spaces);
-            Console.Write('*');
 
-            Console.ReadKey();
+			Console.ReadKey();
         }
-    }
+	}
 }
