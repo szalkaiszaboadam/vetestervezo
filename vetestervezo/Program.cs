@@ -123,7 +123,8 @@ namespace vetestervezo
                 Console.ResetColor(); Console.WriteLine("\n");
           
 
-                Console.WriteLine("\tMost pedig válaszd ki, hogy milyen növényeket szeretnél elülteni:");
+                Console.Write("\n\tMost pedig válaszd ki, hogy milyen növényeket szeretnél elülteni:\n\t - Kilépés ("); Console.ForegroundColor = ConsoleColor.DarkGreen; Console.Write("0"); Console.ResetColor(); Console.Write(")\n\n");
+
                 for (int i = 0; i < tesztLista.Count; i++)
                 {
                     Console.Write("\t - {0} (", tesztLista[i].novenyNeve); Console.ForegroundColor = ConsoleColor.DarkGreen; Console.Write("{0}", tesztLista[i].novenybetuNagy); Console.ResetColor(); Console.Write(")\n");
@@ -131,7 +132,7 @@ namespace vetestervezo
 
                 while (true)
                 {
-
+                    Console.ResetColor();
                     Console.Write("\n\t - ");
                     Console.ResetColor(); Console.ForegroundColor = ConsoleColor.DarkGreen; valaszottNoveny = Console.ReadLine();
                     Console.ResetColor();
@@ -168,10 +169,10 @@ namespace vetestervezo
                     {
                         break;
                     }
-                    else
+                    /*else
                     {
                         Console.ResetColor(); Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("\t  A rendelkezése álló lehetőségek közül válassz!"); Console.ResetColor();
-                    }
+                    }*/
 
                 }
 
