@@ -1,4 +1,4 @@
-bazsalikom;B;b;Yellow;bazsalikomborsikafű;kakukkfűcukkini
-borsikafű;BO;bo;Red;borsikafűbazsalikom;kakukkfűcukkini
-kakukkfű;K;k;Blue;kakukkfűcukkini;bazsalikomborsikafű
-cukkini;C;c;DarkGreen;cukkinikakukkfű;bazsalikomborsikafű
+bazsalikom;B;b;bazsalikomborsikafű;kakukkfűcukkini
+borsikafű;BO;bo;borsikafűbazsalikom;kakukkfűcukkini
+kakukkfű;K;k;kakukkfűcukkini;bazsalikomborsikafű
+cukkini;C;c;cukkinikakukkfű;bazsalikomborsikafű

@@ -1,6 +1,4 @@
-﻿using Microsoft.Win32.SafeHandles;
-using Spire.Xls;
-using System;
+﻿using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -18,9 +16,9 @@ namespace vetestervezo
     class forrasAdat
     {
         public string novenyNeve;
+        public string novenyBetu;
         public string novenybetuNagy;
         public string novenybetuKicsi;
-        public string szin;
         public string szereti;
         public string nemszereti;
 
@@ -30,9 +28,8 @@ namespace vetestervezo
             novenyNeve = m[0];
             novenybetuNagy = m[1];
             novenybetuKicsi = m[2];
-            szin = m[3];
-            szereti = m[4];
-            nemszereti = m[5];
+            szereti = m[3];
+            nemszereti = m[4];
 
         }
     }
@@ -102,43 +99,7 @@ namespace vetestervezo
                     Console.Write("\t Választásod: "); Console.ForegroundColor = ConsoleColor.Yellow;
                     kezdoValasztas = Console.ReadLine(); Console.ResetColor();
 
-<<<<<<< Updated upstream
                     if (kezdoValasztas == "T" || kezdoValasztas == "t")
-=======
-<<<<<<< HEAD
-                    if (betuk.Contains(valaszottNoveny))
-                    {
-                        //break;
-                        string tempNoveny = "";
-                        for (int i = 0; i < tesztLista.Count; i++)
-                        {
-                            if (valaszottNoveny == tesztLista[i].novenybetuNagy || valaszottNoveny == tesztLista[i].novenybetuKicsi)
-                            {
-                                tempNoveny = tesztLista[i].novenyNeve;
-                            }
-                        }
-
-                        int tempnovenyekSzama = 0;
-
-
-                        do
-                        {
-                            Console.ResetColor(); Console.Write("\tAdd meg mennyi {0}-t szeretnél elültetni: ", tempNoveny); Console.ForegroundColor = ConsoleColor.DarkGreen;
-                        } while (!int.TryParse(Console.ReadLine(), out tempnovenyekSzama));
-
-
-                        for (int i = 0; i < tempnovenyekSzama; i++)
-                        {
-                            valasztott.Add(tempNoveny);
-                        }
-                        
-
-                    }
-                    if (valaszottNoveny == "0" || valaszottNoveny == "0")
-=======
-                    if (kezdoValasztas == "T" || kezdoValasztas == "t")
->>>>>>> f646a1488a53db0d839af50511dca4160cc01e8f
->>>>>>> Stashed changes
                     {
                         break;
                     }
@@ -157,7 +118,6 @@ namespace vetestervezo
 
                 }
 
-<<<<<<< Updated upstream
                 if (kezdoValasztas == "T" || kezdoValasztas == "t")
                 {
                     Console.Clear();
@@ -198,74 +158,6 @@ namespace vetestervezo
                         Console.ResetColor();
 
 
-=======
-<<<<<<< HEAD
-
-
-
-                //Console.WriteLine("asd");
-                //C
-                //onsole.WriteLine("\x1b[1masd\x1b[0m");
-
-         
-=======
-                if (kezdoValasztas == "T" || kezdoValasztas == "t")
-                {
-                    Console.Clear();
-                
-                    do
-                    {
-                        Console.ResetColor(); Console.Write("\tElőször kérlek add, hogy hány ágyást szeretnél beültetni (szám): "); Console.ResetColor(); Console.ForegroundColor = ConsoleColor.DarkGreen;
-                    } while (!int.TryParse(Console.ReadLine(), out agyasokSzama));
-
-
-                    Console.ResetColor(); Console.WriteLine("\n\tIlletve kérlek add meg, hogy megkkorák az ágyások");
-                    Console.WriteLine("\t Egy ilyen csillag: *, 20 négyzetcentit és egy növényt jelent.\n\t Kérlek ennek fényében add meg a pontos adatokat!\n");
->>>>>>> f646a1488a53db0d839af50511dca4160cc01e8f
-
-                    do
-                    {
-                        Console.ResetColor();  Console.Write("\t- Az ágyások hosszúsága (szám, cm): "); Console.ForegroundColor = ConsoleColor.DarkGreen;
-                    } while (!int.TryParse(Console.ReadLine(), out hossz));
-                    do
-                    {
-                        Console.ResetColor(); Console.Write("\t- Az ágyások szélessége (szám, cm): "); Console.ForegroundColor = ConsoleColor.DarkGreen;
-                    } while (!int.TryParse(Console.ReadLine(), out szel));
-
-                    Console.ResetColor(); Console.WriteLine("\n");
-          
-
-                    Console.Write("\n\tMost pedig válaszd ki, hogy milyen növényeket szeretnél elülteni:\n\t - Kilépés ("); Console.ForegroundColor = ConsoleColor.DarkGreen; Console.Write("0"); Console.ResetColor(); Console.Write(")\n\n");
-
-                    for (int i = 0; i < tesztLista.Count; i++)
-                    {
-                        Console.Write("\t - {0} (", tesztLista[i].novenyNeve); Console.ForegroundColor = ConsoleColor.DarkGreen; Console.Write("{0}", tesztLista[i].novenybetuNagy); Console.ResetColor(); Console.Write(")\n");
-                    }
-
-                    while (true)
-                    {
-                        Console.ResetColor();
-                        Console.Write("\n\t - ");
-                        Console.ResetColor(); Console.ForegroundColor = ConsoleColor.DarkGreen; valaszottNoveny = Console.ReadLine();
-                        Console.ResetColor();
-
-<<<<<<< HEAD
-                //do
-                //{
-                for (int y = 0; y < agyasokSzama; y++)
-                {
-                    for (int i = 0; i <= hossz; i++)
-                    {
-                        //Console.WriteLine("asd");
-                        for (int j = 1; j < szel; j++)
-                        {
-                            /*do
-                            {
-                                Console.Write("*");
-                                valasztott.Remove("bazsalikom");
-=======
-
->>>>>>> Stashed changes
                         if (betuk.Contains(valaszottNoveny))
                         {
                             //break;
@@ -330,106 +222,14 @@ namespace vetestervezo
 				        }
 				        Console.WriteLine("\n");
 			        }
-<<<<<<< Updated upstream
-=======
->>>>>>> f646a1488a53db0d839af50511dca4160cc01e8f
-
-
-                            } while (!(valasztott.Count == 0));*/
-
-
-                            if (valasztott.Count != 0)
-                            {
-
-
-                                for (int i = 0; i < length; i++)
-                                {
-
-                                }
-                                if (valasztott[i] == "bazsalikom")
-                                {
-                                    Console.Write("*");
-                                    valasztott.Remove("bazsalikom");
-                                }
-                                else if (valasztott[i] == "kakukkfű")
-                                {
-                                    Console.Write("o");
-                                    valasztott.Remove("kakukkfű");
-                                }
-
-                                /*for (int uu = 0; uu < valasztott.Count; uu++)
-                                {
-                                    if (valasztott[uu] == "bazsalikom")
-                                    {*/
-                                
-                                 /*   }
-                                    if (valasztott[uu] == "kakukkfű")
-                                    {
-                                        Console.Write("o");
-                                    }
-
-                                }*/
-
-                                //for (int ii = 0; ii < valasztott.Count; ii++)
-                                //{
-                                    /*string tempSzin = "";
-                                    string tempNev = "";
-
-                                    for (int jj = 0; jj < tesztLista.Count; jj++)
-                                    {
-                                        if (valasztott[ii] == tesztLista[jj].novenyNeve)
-                                        {
-                                            tempNev = tesztLista[jj].novenyNeve;
-                                            //tempSzin = tesztLista[jj].szin;
-                                            //Console.ForegroundColor = ConsoleColor.(tesztLista[jj].szin);
-                                        }
-                                    }
->>>>>>> Stashed changes
 
 
 
-                                    //Console.ForegroundColor = ConsoleColor.tempSzin;
-                                    Console.Write("*");
-                                    valasztott.Remove("bazsalikom");*/
-                                //}
-                                
-
-                            }
-                            
-
-                            if (valasztott.Count == 0)
-                            {
-                                Console.Write("x");
-                            }
-
-                            
-                        }
-                        Console.WriteLine();
-                    }
-                    Console.WriteLine("\n");
-                    //    }
-                    //} while (!(valasztott.Count == 0));
 
 
                 }
 
 
-<<<<<<< Updated upstream
-                if (kezdoValasztas == "Ú" && kezdoValasztas == "ú")
-                {
-=======
->>>>>>> Stashed changes
-
-                }
-
-
-<<<<<<< Updated upstream
-                if (kezdoValasztas == "K" || kezdoValasztas == "k")
-                {
-                    Environment.Exit(0);
-                }
-
-=======
                 if (kezdoValasztas == "Ú" && kezdoValasztas == "ú")
                 {
 
@@ -441,7 +241,6 @@ namespace vetestervezo
                     Environment.Exit(0);
                 }
 
->>>>>>> Stashed changes
                 Console.ResetColor(); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("Kilépsz? "); Console.ResetColor(); Console.Write("(Nyomj meg egy billentyűt)");
                 Console.ReadKey();
         }
