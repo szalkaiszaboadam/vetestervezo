@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
-
+using Org.BouncyCastle.Asn1.Esf;
 
 namespace vetestervezo
 {
@@ -40,7 +40,7 @@ namespace vetestervezo
 
             static void Main(string[] args)
 		    {
-                #region Adatbázis
+                /*#region Adatbázis
                 string server = "localhost";
                 string database = "vetestervezo";
                 string username = "root";
@@ -51,12 +51,9 @@ namespace vetestervezo
                 string query = "SELECT * FROM novenyek";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 MySqlDataReader reader = cmd.ExecuteReader();
-                /*while (reader.Read())
-                {
-                    Console.WriteLine("Növény neve: " + reader["novenyNeve"]);
-                }*/
+          
                 
-                #endregion
+                #endregion*/
 
                 string betuk = "BbBOboKkCc";
                 string valaszottNoveny = "";
@@ -215,8 +212,33 @@ namespace vetestervezo
 					        //Console.WriteLine("asd");
 					        for (int j = 1; j < szel; j++)
 					        {
-					
-						        Console.Write("*");
+
+                        
+
+                                if (valasztott.Count != 0)
+                                {
+                                /*if (valasztott[i] == "bazsalikom")
+                                {*/
+                                if (valasztott[i] == "bazsalikom")
+                                {
+                                    Console.Write("*");
+                                        valasztott.Remove("bazsalikom");
+                                }
+                                
+                                    /*}
+                                    else if (valasztott[i] == "kakukkfű")
+                                    {
+                                        Console.Write("o");
+                                        valasztott.Remove("kakukkfű");
+                                    }*/
+
+                                }
+
+                                else if (valasztott.Count == 0)
+                                {
+                                    Console.Write("x");
+                                }
+
 					        }
 					        Console.WriteLine();
 				        }
