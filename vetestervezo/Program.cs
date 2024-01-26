@@ -234,7 +234,7 @@ namespace vetestervezo
 
                                 }
 
-                                else if (valasztott.Count == 0)
+                                if (valasztott.Count == 0)
                                 {
                                     Console.Write("x");
                                 }
