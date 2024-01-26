@@ -14,19 +14,19 @@ namespace teszt
         static void Main(string[] args)
         {
             string server = "localhost";
-            string database = "balaton";
+            string database = "vetestervezo";
             string username = "root";
             string password = "";
             string constring = "Server="+server+";"+"Database="+database+";"+"UID="+username+";"+"Password="+password+";";
             MySqlConnection conn = new MySqlConnection(constring); 
             conn.Open();    
-            string query = "SELECT * FROM hajok";
+            string query = "SELECT * FROM novenyek";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             MySqlDataReader reader = cmd.ExecuteReader();   
             while (reader.Read()) 
             {
-                Console.WriteLine(reader["hajoNev"]);
-                Console.WriteLine(reader["hajoOszt"]);
+                Console.WriteLine("Növény neve: " + reader["novenyNeve"]);
+                ;
             }
             Console.ReadKey();  
         }
