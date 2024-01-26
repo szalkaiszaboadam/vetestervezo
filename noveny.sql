@@ -1,5 +1,9 @@
 CREATE TABLE novenyek(nev TEXT, bab INTEGER, bazsalikom INTEGER, borsikafu INTEGER,borso INTEGER, burgonya INTEGER,  cekla INTEGER,cukkini INTEGER,fokhagyma INTEGER,kakukkfu INTEGER,kapor INTEGER,kaposztak INTEGER,karalabe INTEGER,karfiol INTEGER,kelbimbo INTEGER,kukorica INTEGER);
 
+INSERT INTO novenyek(novenyNeve,novenybetuNagy,novenybetuKicsi,szereti,nemszereti) VALUES("Bazsalikom","B","b","céklapaprikakukorica", "almamálnatészta");
+
+
+
 INSERT INTO novenyek(nev,bab,bazsalikom,borsikafu,borso,burgonya,cekla,cukkini,fokhagyma,kakukkfu,kapor,kaposztak,karalabe,karfiol,kelbimbo,kukorica) VALUES("Bab",0,0,1,0,1,0,0,2,0,1,1,2,1,1,1);
 INSERT INTO novenyek(nev,bab,bazsalikom,borsikafu,borso,burgonya,cekla,cukkini,fokhagyma,kakukkfu,kapor,kaposztak,karalabe,karfiol,kelbimbo,kukorica) VALUES("Bazsalikom",0,0,0,0,0,0,0,0,0,0,1,1,1,1,0);
 INSERT INTO novenyek(nev,bab,bazsalikom,borsikafu,borso,burgonya,cekla,cukkini,fokhagyma,kakukkfu,kapor,kaposztak,karalabe,karfiol,kelbimbo,kukorica) VALUES("Borsikafű",1,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
