@@ -207,6 +207,13 @@ namespace vetestervezo
                 Console.ResetColor(); Console.Write("Ágyások hosszúsága: "); Console.ForegroundColor = ConsoleColor.DarkGreen; Console.Write("{0}\n", hossz);
                 Console.ResetColor(); Console.Write("Ágyások szélessége: "); Console.ForegroundColor = ConsoleColor.DarkGreen; Console.Write("{0}\n\n", szel); Console.ResetColor();
 
+
+                Console.WriteLine("Jelmagyarázat:");
+
+
+
+
+
                 int tempSzam = agyasokSzama * (hossz * szel);
         
 
@@ -240,8 +247,8 @@ namespace vetestervezo
                                 }
                                 else
                                 {
-                                    Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkGray; Console.ForegroundColor = ConsoleColor.Gray; Console.Write("*"); Console.ResetColor();
-                                }                                
+                                        Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("*"); Console.ResetColor();
+                                    }                                
 
                             }
                             Console.WriteLine();
@@ -288,7 +295,7 @@ namespace vetestervezo
                                     }
                                     else
                                     {
-                                        Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkGray; Console.ForegroundColor = ConsoleColor.Gray; Console.Write("*"); Console.ResetColor();
+                                        Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("*"); Console.ResetColor();
                                     }
 
                                 }
