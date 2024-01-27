@@ -265,7 +265,7 @@ namespace vetestervezo
 
                 if (kezdoValasztas == "K" || kezdoValasztas == "k")
                 {
-                    Environment.Exit(0);
+                   Environment.Exit(0);
                 }
 
                 Console.ResetColor(); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("Kilépsz? "); Console.ResetColor(); Console.Write("(Nyomj meg egy billentyűt)");
