@@ -1,0 +1,66 @@
+                /*for (int y = 0; y < agyasokSzama; y++)
+                {*/
+                    if (valasztott.Count != 0)
+                    {
+                        //for (int ii = 0; ii < valasztott.Count; ii++)
+                        //{
+                        for (int ii = 0; ii < valasztott.Count; ii++)
+                        {
+                            for (int i = 0; i <= hossz; i++)
+                        {
+                            for (int j = 1; j < szel+1; j++)
+                            {
+
+                             if (valasztott.Count != 0)
+                             {
+                               // for (int ii = 0; ii < valasztott.Count; ii++)
+                                //{
+                                /*if (valasztott.Count != 0)
+                                 {*/
+                          
+                                        if (valasztott[0] == "kakukkfű")
+                                        {
+                                        Console.ResetColor(); Console.BackgroundColor = ConsoleColor.Green; Console.ForegroundColor = ConsoleColor.Green; Console.Write("c"); Console.ResetColor();
+                                        valasztott.Remove("kakukkfű");
+
+                                        }
+                                        else if (valasztott[0] == "bazsalikom")
+                                        {
+                                        Console.ResetColor(); Console.BackgroundColor = ConsoleColor.Red; Console.ForegroundColor = ConsoleColor.Red; Console.Write("o"); Console.ResetColor();
+                                        valasztott.Remove("bazsalikom");
+                                        } /*else if (valasztott[0] == "")
+                                    {
+                                        Console.ResetColor(); Console.BackgroundColor = ConsoleColor.Blue; Console.ForegroundColor = ConsoleColor.Blue; Console.Write("x"); Console.ResetColor();
+                                    }*/
+
+                                       /* else
+                                        {
+                                            Console.ResetColor(); Console.BackgroundColor = ConsoleColor.Blue; Console.ForegroundColor = ConsoleColor.Blue; Console.Write("x"); Console.ResetColor();
+
+                                        }*/
+
+
+
+                            }
+
+                                    //}
+                                    else
+                                    {
+                                    Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("x"); Console.ResetColor();
+                                }
+
+                                    
+                                    /*else
+                                    {
+                                        Console.Write("x");
+                                    }*/
+
+
+                                }
+                                Console.WriteLine();
+                        }
+                        Console.WriteLine("\n");
+
+
+                    }
+                    }

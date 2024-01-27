@@ -86,7 +86,9 @@ namespace vetestervezo
                 //Console.BackgroundColor = ConsoleColor.DarkGreen;
                 Console.BackgroundColor = ConsoleColor.DarkGreen; Console.ForegroundColor = ConsoleColor.White; Console.WriteLine("\n Üdvözöllek a Vetéstervezőben! \n"); Console.ResetColor();
 
-                Console.Write("\t("); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("T"); Console.ResetColor(); Console.Write(") Tervező\n");
+    
+
+            Console.Write("\t("); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("T"); Console.ResetColor(); Console.Write(") Tervező\n");
                 Console.Write("\t("); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("Ú"); Console.ResetColor(); Console.Write(") Új növények feltöltése\n");
                 Console.Write("\t("); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("K"); Console.ResetColor(); Console.ResetColor(); Console.Write(") Kilépés\n\n");
 
@@ -205,126 +207,48 @@ namespace vetestervezo
                 Console.ResetColor(); Console.Write(" - Ágyások szélessége: "); Console.ForegroundColor = ConsoleColor.DarkGreen; Console.Write("{0}\n\n", szel); Console.ResetColor();
 
 
-                for (int y = 0; y < agyasokSzama; y++)
+ 
+
+
+                if (valasztott.Count != 0)
                 {
 
-
-                    if (valasztott.Count != 0)
+                    for (int ii = 0; ii < valasztott.Count; ii++)
                     {
-                        //for (int ii = 0; ii < valasztott.Count; ii++)
-                        //{
-                        for (int ii = 0; ii < valasztott.Count; ii++)
+                        for (int i = 0; i <= hossz; i++)
                         {
-                            for (int i = 0; i <= hossz; i++)
-                        {
-                            for (int j = 1; j < szel; j++)
+                            for (int j = 1; j < szel+1; j++)
                             {
 
-                             if (valasztott.Count != 0)
-                             {
-                               // for (int ii = 0; ii < valasztott.Count; ii++)
-                                //{
-                                /*if (valasztott.Count != 0)
-                                 {*/
-                                if (valasztott[ii] == "bazsalikom")
-                                        {
-                                            Console.Write("o");
-                                            valasztott.Remove("bazsalikom");
-                                        }
-                                        else if (valasztott[ii] == "kakukkfű")
-                                        {
-                                            Console.Write("c");
-                                            valasztott.Remove("kakukkfű");
-                                        } else
-                                        {
-                                            Console.Write("x");
-                                        }
+                                if (valasztott.Count != 0)
+                                {
 
+                                    if (valasztott[0] == "kakukkfű")
+                                    {
+                                        Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkGreen; Console.ForegroundColor = ConsoleColor.Green; Console.Write("*"); Console.ResetColor();
+                                        valasztott.Remove("kakukkfű");
 
+                                    }
+                                    else if (valasztott[0] == "bazsalikom")
+                                    {
+                                        Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkRed; Console.ForegroundColor = ConsoleColor.Red; Console.Write("*"); Console.ResetColor();
+                                        valasztott.Remove("bazsalikom");
+                                    } 
+
+                                }
+                                else
+                                {
+                                    Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkGray; Console.ForegroundColor = ConsoleColor.Gray; Console.Write("*"); Console.ResetColor();
+                                }                                
 
                             }
-
-                                    /*}*/
-                                    /*else
-                                    {
-                                        Console.Write("x");
-                                    }*/
-
-                                    
-                                    else
-                                    {
-                                        Console.Write("x");
-                                    }
-
-
-                                }
-                                Console.WriteLine();
+                            Console.WriteLine();
                         }
                         Console.WriteLine("\n");
-
-
                     }
-                    }
-                    if (valasztott.Count == 0)
-                    {
-
-                    for (int i = 0; i <= hossz; i++)
-                    {
-                        for (int j = 1; j < szel; j++)
-                        {
-
-
-             
-                         Console.Write("x");
-          
-
-
-                        }
-                        Console.WriteLine();
-                    }
-                    Console.WriteLine("\n");
                 }
-
-
-
                 
 
-                }
-
-
-                /*for (int y = 0; y < agyasokSzama; y++)
-                {
-                    for (int i = 0; i <= hossz; i++)
-                    {
-                        //Console.WriteLine("asd");
-                        for (int j = 1; j < szel; j++)
-                        {
-
-
-
-                            if (valasztott.Count != 0)
-                            {
-      
-                if (valasztott[i] == "bazsalikom")
-                {
-                    Console.Write("*");
-                    valasztott.Remove("bazsalikom");
-                }
-
-            }
-
-                                }
-
-                                if (valasztott.Count == 0)
-                                {
-                                    Console.Write("x");
-                                }
-
-					        }
-					        Console.WriteLine();
-				        }
-				        Console.WriteLine("\n");
-			        }*/
 
 
 
