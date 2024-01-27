@@ -1,0 +1,3 @@
+Paradicsom;1;0,1
+Paprika;0;1;0
+uborka;0;1;1
