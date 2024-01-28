@@ -44,10 +44,10 @@ namespace vetestervezo
 
 
     class Program
-	{
+    {
 
-            static void Main(string[] args)
-		    {
+        static void Main(string[] args)
+        {
             /*#region Adatbázis
             string server = "localhost";
             string database = "vetestervezo";
@@ -67,12 +67,12 @@ namespace vetestervezo
 
             string betuk = "BbKk"; //BOboCc
             string valaszottNoveny = "";
-                int agyasokSzama;
-                int hossz, szel; //ágyások mélysége és szélessége
-                string kezdoValasztas = "";
-                List<forrasAdat> tesztLista = new List<forrasAdat>();
-                List<string> valasztott = new List<string>();
-                List<string> valasztottAllando = new List<string>();
+            int agyasokSzama;
+            int hossz, szel; //ágyások mélysége és szélessége
+            string kezdoValasztas = "";
+            List<forrasAdat> tesztLista = new List<forrasAdat>();
+            List<string> valasztott = new List<string>();
+            List<string> valasztottAllando = new List<string>();
 
 
 
@@ -80,54 +80,54 @@ namespace vetestervezo
 
 
 
-                while (!olvas.EndOfStream)
-                {
+            while (!olvas.EndOfStream)
+            {
 
-                    string egysor = olvas.ReadLine();
-                    forrasAdat adatok = new forrasAdat(egysor);
-                    tesztLista.Add(adatok);
+                string egysor = olvas.ReadLine();
+                forrasAdat adatok = new forrasAdat(egysor);
+                tesztLista.Add(adatok);
+            }
+
+            olvas.Close();
+
+
+
+
+
+
+
+            Console.BackgroundColor = ConsoleColor.DarkGreen; Console.ForegroundColor = ConsoleColor.White; Console.WriteLine("\n Üdvözöllek a Vetéstervezőben! \n"); Console.ResetColor();
+
+
+
+            Console.Write("\t("); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("T"); Console.ResetColor(); Console.Write(") Tervező\n");
+            Console.Write("\t("); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("Ú"); Console.ResetColor(); Console.Write(") Új növények feltöltése\n");
+            Console.Write("\t("); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("K"); Console.ResetColor(); Console.ResetColor(); Console.Write(") Kilépés\n\n");
+
+            while (true)
+            {
+
+                Console.Write("\t Választásod: "); Console.ForegroundColor = ConsoleColor.Yellow;
+                kezdoValasztas = Console.ReadLine(); Console.ResetColor();
+
+                if (kezdoValasztas == "T" || kezdoValasztas == "t")
+                {
+                    break;
+                }
+                if (kezdoValasztas == "Ú" || kezdoValasztas == "ú")
+                {
+                    break;
+                }
+                if (kezdoValasztas == "K" || kezdoValasztas == "k")
+                {
+                    break;
+                }
+                else
+                {
+                    Console.ResetColor(); Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("\t  A rendelkezése álló lehetőségek közül válassz!"); Console.ResetColor();
                 }
 
-                olvas.Close();
-
-
-
-    
-
-            
-
-                Console.BackgroundColor = ConsoleColor.DarkGreen; Console.ForegroundColor = ConsoleColor.White; Console.WriteLine("\n Üdvözöllek a Vetéstervezőben! \n"); Console.ResetColor();
-
-    
-
-                Console.Write("\t("); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("T"); Console.ResetColor(); Console.Write(") Tervező\n");
-                Console.Write("\t("); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("Ú"); Console.ResetColor(); Console.Write(") Új növények feltöltése\n");
-                Console.Write("\t("); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("K"); Console.ResetColor(); Console.ResetColor(); Console.Write(") Kilépés\n\n");
-
-                while (true)
-                {
-
-                    Console.Write("\t Választásod: "); Console.ForegroundColor = ConsoleColor.Yellow;
-                    kezdoValasztas = Console.ReadLine(); Console.ResetColor();
-
-                    if (kezdoValasztas == "T" || kezdoValasztas == "t")
-                    {
-                        break;
-                    }
-                    if (kezdoValasztas == "Ú" || kezdoValasztas == "ú")
-                    {
-                        break;
-                    }
-                    if (kezdoValasztas == "K" || kezdoValasztas == "k")
-                    {
-                        break;
-                    }
-                    else
-                    {
-                        Console.ResetColor(); Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("\t  A rendelkezése álló lehetőségek közül válassz!"); Console.ResetColor();
-                    }
-
-                }
+            }
 
             if (kezdoValasztas == "T" || kezdoValasztas == "t")
             {
@@ -225,43 +225,43 @@ namespace vetestervezo
                 int szamolo = 1;
                 int szamoloFelul = 0;
                 int tempSzam = agyasokSzama * (hossz * szel);
-        
+
 
                 if (valasztott.Count <= (agyasokSzama * (hossz * szel)))
                 {
-                   if (valasztott.Count != 0)
-                   {
-
-                    for (int ii = 0; ii < valasztott.Count; ii++)
+                    if (valasztott.Count != 0)
                     {
-                        for (int i = 1; i <= hossz; i++)
-                        {
-                            for (int j = 1; j < szel+1; j++)
-                            {
 
-                                if (valasztott.Count != 0)
+                        for (int ii = 0; ii < valasztott.Count; ii++)
+                        {
+                            for (int i = 1; i <= hossz; i++)
+                            {
+                                for (int j = 1; j < szel + 1; j++)
                                 {
+
+                                    if (valasztott.Count != 0)
+                                    {
                                         szamolo = szamolo - 1;
 
 
                                         if (szamoloFelul < szel)
                                         {
-                                                if (valasztott[0].Contains("KAKUKKFŰ") && valasztottAllando[szamolo].Contains("kakukkfű")) //valasztott[0].ToLower() //valasztott[0] !!!
-                                                {
+                                            if (valasztott[0].Contains("KAKUKKFŰ") && valasztottAllando[szamolo].Contains("kakukkfű")) //valasztott[0].ToLower() //valasztott[0] !!!
+                                            {
                                                 Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkGreen; Console.ForegroundColor = ConsoleColor.Magenta; Console.Write(valasztott[0].Substring(0, 1)); Console.ResetColor();
-                                                valasztott.Remove(valasztott[0]); 
+                                                valasztott.Remove(valasztott[0]);
 
-                                                }
-                                                else if (valasztott[0].Contains("BAZSALIKOM") && valasztottAllando[szamolo].Contains("bazsalikom"))
-                                                {
+                                            }
+                                            else if (valasztott[0].Contains("BAZSALIKOM") && valasztottAllando[szamolo].Contains("bazsalikom"))
+                                            {
                                                 Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkRed; Console.ForegroundColor = ConsoleColor.Magenta; Console.Write(valasztott[0].Substring(0, 1)); Console.ResetColor();
                                                 valasztott.Remove(valasztott[0]);
-                                                }
+                                            }
 
-                                                else
-                                                {
-                                                    Console.Write("x");
-                                                }
+                                            else
+                                            {
+                                                Console.Write("x");
+                                            }
 
 
                                             szamoloFelul++;
@@ -312,35 +312,36 @@ namespace vetestervezo
 
 
 
-                                       
+
                                         //szamolo++;
 
 
-                                    /*else if (valasztottAllando[szamolo].Contains(valasztott[0].ToLower()))
+                                        /*else if (valasztottAllando[szamolo].Contains(valasztott[0].ToLower()))
+                                        {
+                                                Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkGray; Console.ForegroundColor = ConsoleColor.Gray; Console.Write(valasztott[0].Substring(0, 1)); Console.ResetColor();
+                                        }*/
+
+                                    }
+                                    else
                                     {
-                                            Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkGray; Console.ForegroundColor = ConsoleColor.Gray; Console.Write(valasztott[0].Substring(0, 1)); Console.ResetColor();
-                                    }*/
+                                        Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("ó"); Console.ResetColor();
+                                    }
 
                                 }
-                                else
-                                {
-                                        Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("ó"); Console.ResetColor();
-                                }                                
-
+                                Console.WriteLine();
                             }
-                            Console.WriteLine();
+                            Console.WriteLine("\n");
                         }
-                        Console.WriteLine("\n");
                     }
-                   }
-                } else
+                }
+                else
                 {
                     if (valasztott.Count != 0)
                     {
 
                         List<string> tempSzamok = new List<string>();
 
-                        for (int i = 0; i < tempSzam+1; i++)
+                        for (int i = 0; i < tempSzam + 1; i++)
                         {
                             tempSzamok.Add("o");
                         }
@@ -412,37 +413,37 @@ namespace vetestervezo
                     {
                         maradek.Add(valasztott[i]);
                     }
-                    
+
 
                     Console.Write("Az ágyások nem elegek az összes növény beültetéséhez.\nÖsszesen {0} maradt ki, ezekből a növényekből:\n - ", valasztott.Count);
                     Console.Write(string.Join("\n - ", maradek));
                     //Console.WriteLine("\nösszesen {0} maradt ki.", valasztott.Count);
 
                 }
-                
-                
 
 
 
 
 
 
-                }
 
 
-                if (kezdoValasztas == "Ú" && kezdoValasztas == "ú")
-                {
-
-                }
+            }
 
 
-                if (kezdoValasztas == "K" || kezdoValasztas == "k")
-                {
-                   Environment.Exit(0);
-                }
+            if (kezdoValasztas == "Ú" && kezdoValasztas == "ú")
+            {
 
-                Console.ResetColor(); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\n\nKilépsz? "); Console.ResetColor(); Console.Write("(Nyomj meg egy billentyűt)");
-                Console.ReadKey();
+            }
+
+
+            if (kezdoValasztas == "K" || kezdoValasztas == "k")
+            {
+                Environment.Exit(0);
+            }
+
+            Console.ResetColor(); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\n\nKilépsz? "); Console.ResetColor(); Console.Write("(Nyomj meg egy billentyűt)");
+            Console.ReadKey();
         }
-	}
+    }
 }
