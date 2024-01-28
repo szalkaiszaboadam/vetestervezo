@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 bazsalikom;B;b;bazsalikomborsika;kakukkfűcukkini
-=======
-bazsalikom;B;b;bazsalikomborsikafű;kakukkfűcukkini
->>>>>>> parent of 24b38da (oldal nézése)
 borsikafű;BO;bo;borsikafűbazsalikom;kakukkfűcukkini
 kakukkfű;K;k;kakukkfűcukkini;bazsalikomborsikafű
 cukkini;C;c;cukkinikakukkfű;bazsalikomborsikafű

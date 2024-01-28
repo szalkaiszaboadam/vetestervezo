@@ -244,7 +244,7 @@ namespace vetestervezo
                                         szamolo = szamolo - 1;
 
 
-                                        if (szamoloFelul < szel)
+                                        /*if (szamoloFelul < szel)
                                         {
                                             if (valasztott[0].Contains("KAKUKKFŰ") && valasztottAllando[szamolo].Contains("kakukkfű")) //valasztott[0].ToLower() //valasztott[0] !!!
                                             {
@@ -264,19 +264,18 @@ namespace vetestervezo
                                             }
 
 
-                                            szamoloFelul++;
-                                            szamolo++;
+                             
 
                                         }
                                         else
-                                        {
-                                            if (valasztott[0].Contains("KAKUKKFŰ") && valasztottAllando[szamolo].Contains("kakukkfű")) //valasztott[0].ToLower() //valasztott[0] !!!
+                                        {*/
+                                            if (valasztott[0].Contains("KAKUKKFŰ") /*&& valasztottAllando[szamolo].Contains("kakukkfű")*/) //valasztott[0].ToLower() //valasztott[0] !!!
                                             {
                                                 Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkGreen; Console.ForegroundColor = ConsoleColor.Green; Console.Write(valasztott[0].Substring(0, 1)); Console.ResetColor();
                                                 valasztott.Remove(valasztott[0]);
 
                                             }
-                                            else if (valasztott[0].Contains("BAZSALIKOM") && valasztottAllando[szamolo].Contains("bazsalikom"))
+                                            else if (valasztott[0].Contains("BAZSALIKOM") /*&& valasztottAllando[szamolo].Contains("bazsalikom")*/)
                                             {
                                                 Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkRed; Console.ForegroundColor = ConsoleColor.Red; Console.Write(valasztott[0].Substring(0, 1)); Console.ResetColor();
                                                 valasztott.Remove(valasztott[0]);
@@ -287,7 +286,7 @@ namespace vetestervezo
                                                 Console.Write("x");
                                             }
 
-                                        }
+                                        //}
 
 
                                         /* 
@@ -308,7 +307,7 @@ namespace vetestervezo
 
 
 
-
+                                        szamoloFelul++;
 
 
 
