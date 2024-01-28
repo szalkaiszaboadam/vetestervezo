@@ -1,4 +1,4 @@
-bazsalikom;B;b;bazsalikomborsikafűkakukkfű;kakukkfűcukkini
+bazsalikom;B;b;bazsalikomborsika;kakukkfűcukkini
 borsikafű;BO;bo;borsikafűbazsalikom;kakukkfűcukkini
-kakukkfű;K;k;kakukkfűcukkinibazsalikom;bazsalikomborsikafű
+kakukkfű;K;k;kakukkfűcukkini;bazsalikomborsikafű
 cukkini;C;c;cukkinikakukkfű;bazsalikomborsikafű
