@@ -17,7 +17,6 @@ namespace vetestervezo
     class forrasAdat
     {
         public string novenyNeve;
-        public string novenyBetu;
         public string novenybetuNagy;
         public string novenybetuKicsi;
         public string szereti;
@@ -56,8 +55,8 @@ namespace vetestervezo
                 
                 #endregion*/
 
-                string betuk = "BbBOboKkCc";
-                string valaszottNoveny = "";
+                string betuk = "BbKk"; //BOboCc
+            string valaszottNoveny = "";
                 int agyasokSzama;
                 int hossz, szel; //ágyások mélysége és szélessége
                 string kezdoValasztas = "";
@@ -84,12 +83,12 @@ namespace vetestervezo
     
 
             
-                //Console.BackgroundColor = ConsoleColor.DarkGreen;
+
                 Console.BackgroundColor = ConsoleColor.DarkGreen; Console.ForegroundColor = ConsoleColor.White; Console.WriteLine("\n Üdvözöllek a Vetéstervezőben! \n"); Console.ResetColor();
 
     
 
-            Console.Write("\t("); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("T"); Console.ResetColor(); Console.Write(") Tervező\n");
+                Console.Write("\t("); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("T"); Console.ResetColor(); Console.Write(") Tervező\n");
                 Console.Write("\t("); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("Ú"); Console.ResetColor(); Console.Write(") Új növények feltöltése\n");
                 Console.Write("\t("); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("K"); Console.ResetColor(); Console.ResetColor(); Console.Write(") Kilépés\n\n");
 
@@ -196,11 +195,6 @@ namespace vetestervezo
 
                 }
 
-                //Console.WriteLine(valasztott);
-
-
-                //Console.WriteLine("asd");
-                //Console.WriteLine("\x1b[1masd\x1b[0m");
 
                 Console.Clear();
                 Console.Write("\nÁgyások száma: "); Console.ForegroundColor = ConsoleColor.DarkGreen; Console.Write("{0}\n", agyasokSzama);
@@ -301,15 +295,31 @@ namespace vetestervezo
                                         }*/
 
 
-                                        if (true)
+                                        if (valasztott[0] == "kakukkfű")
                                         {
+                                            Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkGreen; Console.ForegroundColor = ConsoleColor.Green; Console.Write(valasztott[0].Substring(0, 1)); Console.ResetColor();
 
                                         }
+                                        else if (valasztott[0] == "bazsalikom")
+                                        {
+                                            Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkRed; Console.ForegroundColor = ConsoleColor.Red; Console.Write(valasztott[0].Substring(0, 1)); Console.ResetColor();
+                                        }
+
+
+
+
+
+                                        else
+                                        {
+                                            Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkGray; Console.ForegroundColor = ConsoleColor.Gray; Console.Write(valasztott[0].Substring(0, 1)); Console.ResetColor();
+                                        }
+                                        valasztott.Remove(valasztott[0]);
+
 
                                     }
                                     else
                                     {
-                                        Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("*"); Console.ResetColor();
+                                        Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("x"); Console.ResetColor();
                                     }
 
                                 }
