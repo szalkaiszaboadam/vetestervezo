@@ -223,6 +223,7 @@ namespace vetestervezo
 
 
                 int szamolo = 1;
+                //int szamolo2 = hossz;
                 int szamoloFelul = 0;
                 int tempSzam = agyasokSzama * (hossz * szel);
 
@@ -241,7 +242,11 @@ namespace vetestervezo
 
                                     if (valasztott.Count != 0)
                                     {
-                                        /* szamolo = szamolo - 1;
+                                         szamolo = szamolo - 1;
+                                        /*if (szamoloFelul == hossz)
+                                        {
+                                            szamoloFelul = szamoloFelul - hossz;
+                                        }*/
 
 
                                          if (szamoloFelul < szel)
@@ -270,7 +275,29 @@ namespace vetestervezo
                                          }
                                          else
                                          {
-                                             if (valasztott[0].Contains("KAKUKKFŰ") && valasztottAllando[szamolo].Contains("kakukkfű")) //valasztott[0].ToLower() //valasztott[0] !!!
+                                            if (j == 1)
+                                            {
+                                                if (valasztott[0].Contains("KAKUKKFŰ") && valasztottAllando[szamoloFelul-hossz].Contains("kakukkfű")) //valasztott[0].ToLower() //valasztott[0] !!!
+                                                {
+                                                    Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkGreen; Console.ForegroundColor = ConsoleColor.Yellow; Console.Write(valasztott[0].Substring(0, 1)); Console.ResetColor();
+                                                    valasztott.Remove(valasztott[0]);
+
+                                                }
+                                                else if (valasztott[0].Contains("BAZSALIKOM") && valasztottAllando[szamoloFelul - hossz].Contains("bazsalikom"))
+                                                {
+                                                    Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkRed; Console.ForegroundColor = ConsoleColor.Yellow; Console.Write(valasztott[0].Substring(0, 1)); Console.ResetColor();
+                                                    valasztott.Remove(valasztott[0]);
+                                                }
+
+                                                else
+                                                {
+                                                    Console.Write("x");
+                                                    valasztott.Remove(valasztott[0]);
+                                                }
+                                            } else
+                                            {
+
+                                            if (valasztott[0].Contains("KAKUKKFŰ") && valasztottAllando[szamolo].Contains("kakukkfű")) //valasztott[0].ToLower() //valasztott[0] !!!
                                              {
                                                  Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkGreen; Console.ForegroundColor = ConsoleColor.Green; Console.Write(valasztott[0].Substring(0, 1)); Console.ResetColor();
                                                  valasztott.Remove(valasztott[0]);
@@ -287,6 +314,11 @@ namespace vetestervezo
                                                  Console.Write("x");
                                                  valasztott.Remove(valasztott[0]);
                                              }
+                                            }
+                                            
+                                            
+                                            
+                                            
 
                                          }
 
@@ -296,14 +328,9 @@ namespace vetestervezo
 
 
                                          szamolo++;
-
-
-
-
                                          szamoloFelul++;
-
-
-                                         */
+                                        //szamolo2++;
+                                 
 
 
 
