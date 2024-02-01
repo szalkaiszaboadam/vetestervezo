@@ -297,13 +297,13 @@ namespace vetestervezo
                                             } else
                                             {
 
-                                            if (valasztott[0].Contains("KAKUKKFŰ") && valasztottAllando[szamoloFelul-1].Contains("kakukkfű")) //valasztott[0].ToLower() //valasztott[0] !!!
+                                            if (valasztott[0].Contains("KAKUKKFŰ") && valasztottAllando[szamoloFelul - j].Contains("kakukkfű") && valasztottAllando[szamoloFelul-1].Contains("kakukkfű")) //valasztott[0].ToLower() //valasztott[0] !!!
                                              {
                                                  Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkGreen; Console.ForegroundColor = ConsoleColor.Green; Console.Write(valasztott[0].Substring(0, 1)); Console.ResetColor();
                                                  valasztott.Remove(valasztott[0]);
 
                                              }
-                                             else if (valasztott[0].Contains("BAZSALIKOM") && valasztottAllando[szamoloFelul-1].Contains("bazsalikom"))
+                                             else if (valasztott[0].Contains("BAZSALIKOM") && valasztottAllando[szamoloFelul - j].Contains("") && valasztottAllando[szamoloFelul-1].Contains("bazsalikom"))
                                              {
                                                  Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkRed; Console.ForegroundColor = ConsoleColor.Red; Console.Write(valasztott[0].Substring(0, 1)); Console.ResetColor();
                                                  valasztott.Remove(valasztott[0]);
