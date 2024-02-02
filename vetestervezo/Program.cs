@@ -49,11 +49,9 @@ namespace vetestervezo
 
         static void Main(string[] args)
         {
-<<<<<<< HEAD
+
             /*#region Adatbázis
-=======
-            #region Adatbázis
->>>>>>> 7693b2c9e3456515ca568941448aa89e87158179
+
             StreamWriter ir = new StreamWriter("adatTeszt.txt");
             string server = "localhost";
             string database = "vetestervezo";
@@ -71,11 +69,10 @@ namespace vetestervezo
             }
 
             ir.Close();
-<<<<<<< HEAD
+
             #endregion*/
-=======
-            #endregion
->>>>>>> 7693b2c9e3456515ca568941448aa89e87158179
+
+
 
             //valasztottAdat valasztottAdatok = new valasztottAdat();
 
