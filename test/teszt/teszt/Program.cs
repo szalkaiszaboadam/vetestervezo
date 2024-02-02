@@ -32,7 +32,7 @@ namespace teszt
     internal class Program
     {
         static void Main(string[] args)
-        {/*
+        {
             string server = "localhost";
             string database = "vetestervezo";
             string username = "root";
@@ -43,16 +43,41 @@ namespace teszt
             string query = "SELECT * FROM novenyek";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             MySqlDataReader reader = cmd.ExecuteReader();   
+            
             while (reader.Read()) 
             {
                 Console.WriteLine("Növény neve: " + reader["novenyNeve"]);
-                ;
-            }*/
+                
+            }
+            
 
 
-            List<forrasAdat> tesztLista = new List<forrasAdat>();
-            StreamWriter ir = new StreamWriter("adatTeszt.txt");
-            #region Adatbázis
+
+            string novenyneve = "körte";
+            string kisbetu = "ki";
+            string nagybetu = "KI";
+            string szereti = "alma";
+            string nemszereti = "kukorica";
+
+
+
+            
+            string Query = "INSERT INTO novenyek(novenyNeve,novenybetuNagy,novenybetuKicsi,szereti,nemszereti) VALUES('" + novenyneve + "','" + nagybetu + "','" + kisbetu + "','" + szereti + "','" + nemszereti + "');";
+            MySqlConnection MyConn2 = new MySqlConnection(constring);
+            MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
+            MySqlDataReader MyReader2;
+            MyConn2.Open();
+            MyReader2 = MyCommand2.ExecuteReader();    
+
+
+
+
+
+
+
+
+
+            /*StreamWriter ir = new StreamWriter("adatTeszt.txt");
             string server = "localhost";
             string database = "vetestervezo";
             string username = "root";
@@ -68,12 +93,12 @@ namespace teszt
                 ir.WriteLine(Convert.ToString(reader["novenyNeve"]) + ";" + reader["novenybetuNagy"] + ";" + reader["novenybetuKicsi"] + ";" + reader["szereti"] + ";" + reader["nemszereti"]);
             }
 
-            ir.Close();
+            ir.Close();*/
 
 
-            
-            #endregion
-           
+
+
+
             Console.ReadKey();  
         }
     }
