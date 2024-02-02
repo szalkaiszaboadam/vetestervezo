@@ -9,6 +9,7 @@ using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI;
 using Org.BouncyCastle.Asn1.Esf;
 using Spire.Pdf.Exporting.XPS.Schema;
 
@@ -48,7 +49,12 @@ namespace vetestervezo
 
         static void Main(string[] args)
         {
+<<<<<<< HEAD
             /*#region Adatbázis
+=======
+            #region Adatbázis
+>>>>>>> 7693b2c9e3456515ca568941448aa89e87158179
+            StreamWriter ir = new StreamWriter("adatTeszt.txt");
             string server = "localhost";
             string database = "vetestervezo";
             string username = "root";
@@ -59,9 +65,17 @@ namespace vetestervezo
             string query = "SELECT * FROM novenyek";
             MySqlCommand cmd = new MySqlCommand(query, conn);
             MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                ir.WriteLine(Convert.ToString(reader["novenyNeve"]) + ";" + reader["novenybetuNagy"] + ";" + reader["novenybetuKicsi"] + ";" + reader["szereti"] + ";" + reader["nemszereti"]);
+            }
 
-
+            ir.Close();
+<<<<<<< HEAD
             #endregion*/
+=======
+            #endregion
+>>>>>>> 7693b2c9e3456515ca568941448aa89e87158179
 
             //valasztottAdat valasztottAdatok = new valasztottAdat();
 
