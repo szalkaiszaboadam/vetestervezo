@@ -350,6 +350,13 @@ namespace vetestervezo
                                                 valasztott.Remove(valasztott[0]);
                                             }
 
+                                            /*else if ()
+                                            {
+                                                Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkGray; Console.ForegroundColor = ConsoleColor.Gray; Console.Write(valasztott[0].Substring(0, 1)); Console.ResetColor();
+                                                valasztott.Remove(valasztott[0]);
+                                            }*/
+
+
 
                                             else
                                              {
@@ -892,6 +899,7 @@ namespace vetestervezo
                                                     valasztott.Remove(valasztott[0]);
                                                     kuki.Remove(kuki[0]);
                                                 }
+                                 
 
 
                                                 else
@@ -933,16 +941,19 @@ namespace vetestervezo
 
                     for (int i = 0; i < valasztott.Count; i++)
                     {
-                        maradek.Add(valasztott[i]);
+                        maradek.Add(valasztott[i].Substring(0, 2));
                     }
 
-
+                    Console.ResetColor(); Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write("Az megadott ágyások és növények ezen formájában {0} növény nem ültethező be. Ezekből a növényekből maradtak ki:", valasztott.Count);
                     Console.Write(string.Join("\n - ", maradek));
+                    Console.ResetColor();
                     //Console.WriteLine("\nösszesen {0} maradt ki.", valasztott.Count);
 
 
                 }
+
+
 
                 Console.WriteLine();
 
@@ -958,10 +969,10 @@ namespace vetestervezo
                     {
                         maradek2.Add(maradok[i].Substring(0, 2));
                     }
-
+                    Console.ResetColor(); Console.ForegroundColor = ConsoleColor.Red;
                     Console.Write("Az ágyások nem elegek az összes növény beültetéséhez.\nÖsszesen {0} maradt ki, ezekből a növényekből:\n - ", maradok.Count);
                     Console.Write(string.Join("\n - ", maradek2));
-
+                    Console.ResetColor();
                     //Console.WriteLine("\nösszesen {0} maradt ki.", valasztott.Count);
                 }
 
