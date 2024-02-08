@@ -132,7 +132,7 @@ namespace vetestervezo
                 {
                     break;
                 }
-                if (kezdoValasztas == "Ú" || kezdoValasztas == "ú")
+                if (kezdoValasztas == "U" || kezdoValasztas == "u")
                 {
                     break;
                 }
@@ -1078,15 +1078,35 @@ namespace vetestervezo
             }
 
 
-            if (kezdoValasztas == "Ú" && kezdoValasztas == "ú")
+            if (kezdoValasztas == "U" || kezdoValasztas == "u")
             {
+                //Environment.Exit(0);
+                Console.Write("Növény neve: ");
+                string novenyneve = Console.ReadLine();
+                Console.Write("Kisbetű rövidítés: ");
+                string kisbetu = Console.ReadLine();
+                Console.Write("Nagybetű rövidítés: ");
+                string nagybetu = Console.ReadLine();
+                Console.Write("Szereti(zöldségek): ");
+                string szereti = Console.ReadLine();
+                Console.Write("Nem szereti(zöldségek): ");
+                string nemszereti = Console.ReadLine();
 
+
+
+
+                string Query = "INSERT INTO novenyek(novenyNeve,novenybetuNagy,novenybetuKicsi,szereti,nemszereti) VALUES('" + novenyneve + "','" + nagybetu + "','" + kisbetu + "','" + szereti + "','" + nemszereti + "');";
+                MySqlConnection MyConn2 = new MySqlConnection(constring);
+                MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
+                MySqlDataReader MyReader2;
+                MyConn2.Open();
+                MyReader2 = MyCommand2.ExecuteReader();
             }
-
-
-            if (kezdoValasztas == "K" || kezdoValasztas == "k")
+            
+            if (kezdoValasztas == "K" && kezdoValasztas == "k")
             {
-                Environment.Exit(0);
+                
+
             }
 
             Console.ResetColor(); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\n\nKilépsz? "); Console.ResetColor(); Console.Write("(Nyomj meg egy billentyűt)");
