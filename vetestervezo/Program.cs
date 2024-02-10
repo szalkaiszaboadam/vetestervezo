@@ -269,10 +269,19 @@ namespace vetestervezo
                 }
 
 
+                for (int i = 1; i < szel + 1; i++)
+                {
+                    Console.Write("----");
+                }
+                Console.WriteLine();
+
+
+
                 if (valasztott.Count <= (agyasokSzama * (hossz * szel)))
                 {
                     if (valasztott.Count != 0)
                     {
+      
 
                         for (int ii = 0; ii < valasztott.Count; ii++)
                         {
@@ -397,9 +406,10 @@ namespace vetestervezo
                                                     maradok.Add(valasztott[0]);
                                                 }
                                             }
+                                           
 
 
-                                         }
+                                        }
                                          else
                                          {
                                             if (j == 1)
@@ -511,6 +521,7 @@ namespace vetestervezo
                                                         maradok.Add(valasztott[0]);
                                                     }
                                                 }
+                                                
                                             } else
                                             {
 
@@ -616,18 +627,19 @@ namespace vetestervezo
                                                     valasztott.Remove(valasztott[0]);
 
                                                 }
-
+                                                
 
                                                 else
                                              {
                                                  Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("áááá"); Console.ResetColor();
                                                     valasztott.Remove(valasztott[0]);
-                                                    if (valasztott[0 ] != null)
+                                                    if (valasztott[0] != null)
                                                     {
                                                         maradok.Add(valasztott[0]);
                                                     }
                                                     
                                                 }
+                                               
                                             }
                                             
                                             
@@ -697,7 +709,7 @@ namespace vetestervezo
                                                 valasztott.Remove(valasztott[0]);
                                                 kuki.Remove(kuki[0]);
                                             }
-                                            else if (valasztott[0].Contains("BORÓ") && valasztottAllando[szamolo].Contains("borsó"))
+                                            else if (valasztott[0].Contains("BORSÓ") && valasztottAllando[szamolo].Contains("borsó"))
                                             {
                                                 Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkRed; Console.ForegroundColor = ConsoleColor.Red; Console.Write("[" + valasztott[0].Substring(0, 2) + "]"); Console.ResetColor();
                                                 valasztott.Remove(valasztott[0]);
@@ -960,7 +972,7 @@ namespace vetestervezo
                                                 {
                                                     Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkYellow; Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("[" + valasztott[0].Substring(0, 2) + "]"); Console.ResetColor();
                                                     valasztott.Remove(valasztott[0]);
-
+                                                    kuki.Remove(kuki[0]);
                                                 }
 
 
