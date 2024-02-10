@@ -269,22 +269,29 @@ namespace vetestervezo
                 }
 
 
-                for (int i = 1; i < szel + 1; i++)
-                {
-                    Console.Write("----");
-                }
-                Console.WriteLine();
+
 
 
 
                 if (valasztott.Count <= (agyasokSzama * (hossz * szel)))
                 {
+
+
                     if (valasztott.Count != 0)
                     {
-      
+
+
+
 
                         for (int ii = 0; ii < valasztott.Count; ii++)
                         {
+
+                            for (int i = 1; i < szel + 1; i++)
+                            {
+                                Console.Write("----");
+                            }
+                            Console.WriteLine();
+
                             for (int i = 1; i <= hossz; i++)
                             {
                                 for (int j = 1; j < szel + 1; j++)
