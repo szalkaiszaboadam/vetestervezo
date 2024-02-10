@@ -290,10 +290,14 @@ namespace vetestervezo
                             {
                                 Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("óóóó"); Console.ResetColor();
                             }
+                            Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("óóóó"); Console.ResetColor();
                             Console.WriteLine();
+                            
 
                             for (int i = 1; i <= hossz; i++)
                             {
+                                Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("óó"); Console.ResetColor();
+
                                 for (int j = 1; j < szel + 1; j++)
                                 {
 
@@ -421,6 +425,9 @@ namespace vetestervezo
                                          {
                                             if (j == 1)
                                             {
+
+                                                //Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("óó"); Console.ResetColor();
+
                                                 if (valasztott[0].Contains("BAB") && valasztottAllando[szamoloFelul-szel].Contains("bab")) //valasztott[0].ToLower() //valasztott[0] !!!
                                                 {
                                                     Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkBlue; Console.ForegroundColor = ConsoleColor.Blue; Console.Write("[" + valasztott[0].Substring(0, 2) + "]"); Console.ResetColor();
@@ -667,12 +674,15 @@ namespace vetestervezo
                                     }
 
                                 }
+                                Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("óó"); Console.ResetColor();
                                 Console.WriteLine();
                             }
+                            
                             for (int i = 1; i < szel + 1; i++)
                             {
                                 Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("óóóó"); Console.ResetColor();
                             }
+                            Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("óóóó"); Console.ResetColor();
                             Console.WriteLine();
 
                            Console.WriteLine("\n");
@@ -695,6 +705,7 @@ namespace vetestervezo
                             {
                                 Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("óóóó"); Console.ResetColor();
                             }
+                            Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("óóóó"); Console.ResetColor();
                             Console.WriteLine();
 
                             for (int i = 1; i <= hossz; i++)
@@ -828,7 +839,7 @@ namespace vetestervezo
 
 
 
-
+                                                Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("óó"); Console.ResetColor();
 
 
 
@@ -1100,13 +1111,16 @@ namespace vetestervezo
                                     }
 
                                 }
+                                Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("óó"); Console.ResetColor();
                                 Console.WriteLine();
                             }
+                           
 
                             for (int i = 1; i < szel + 1; i++)
                             {
                                 Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("óóóó"); Console.ResetColor();
                             }
+                            Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("óóóó"); Console.ResetColor();
                             Console.WriteLine();
 
                             Console.WriteLine("\n");
