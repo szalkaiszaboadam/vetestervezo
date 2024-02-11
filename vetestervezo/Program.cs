@@ -50,21 +50,7 @@ namespace vetestervezo
         static void Main(string[] args)
         {
 
-            ConsoleKeyInfo cki;
-            // Prevent example from ending if CTL+C is pressed.
-            Console.TreatControlCAsInput = true;
 
-            Console.WriteLine("Press any combination of CTL, ALT, and SHIFT, and a console key.");
-            Console.WriteLine("Press the Escape (Esc) key to quit: \n");
-            do
-            {
-                cki = Console.ReadKey();
-                Console.Write(" --- You pressed ");
-                if (cki.Key == ConsoleKey.C) Console.Write("ALT+");
-                if ((cki.Modifiers & ConsoleModifiers.Shift) != 0) Console.Write("SHIFT+");
-                if ((cki.Modifiers & ConsoleModifiers.Control) != 0) Console.Write("CTL+");
-                Console.WriteLine(cki.Key.ToString());
-            } while (cki.Key != ConsoleKey.Escape);
 
             #region Adatbázis
 
@@ -138,7 +124,42 @@ namespace vetestervezo
             Console.Write("\t("); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("U"); Console.ResetColor(); Console.Write(") Új növények feltöltése\n");
             Console.Write("\t("); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("K"); Console.ResetColor(); Console.ResetColor(); Console.Write(") Kilépés\n\n");
 
+            ConsoleKeyInfo cki;
+            // Prevent example from ending if CTL+C is pressed.
+            Console.TreatControlCAsInput = true;
 
+            Console.WriteLine("Press any combination of CTL, ALT, and SHIFT, and a console key.");
+            Console.WriteLine("Press the Escape (Esc) key to quit: \n");
+            do
+            {
+                cki = Console.ReadKey();
+                Console.Write(" --- You pressed ");
+                if (cki.Key == ConsoleKey.U)
+                {
+                    Console.Write("Növény neve: ");
+                    string novenyneve = Console.ReadLine();
+                    Console.Write("Kisbetű rövidítés: ");
+                    string kisbetu = Console.ReadLine();
+                    Console.Write("Nagybetű rövidítés: ");
+                    string nagybetu = Console.ReadLine();
+                    Console.Write("Szereti(zöldségek): ");
+                    string szereti = Console.ReadLine();
+                    Console.Write("Nem szereti(zöldségek): ");
+                    string nemszereti = Console.ReadLine();
+
+
+
+
+                    string Query = "INSERT INTO novenyek(novenyNeve,novenybetuNagy,novenybetuKicsi,szereti,nemszereti) VALUES('" + novenyneve + "','" + nagybetu + "','" + kisbetu + "','" + szereti + "','" + nemszereti + "');";
+                    MySqlConnection MyConn2 = new MySqlConnection(constring);
+                    MySqlCommand MyCommand2 = new MySqlCommand(Query, MyConn2);
+                    MySqlDataReader MyReader2;
+                    MyConn2.Open();
+                    MyReader2 = MyCommand2.ExecuteReader();
+                }
+
+                Console.WriteLine(cki.Key.ToString());
+            } while (cki.Key != ConsoleKey.Escape);
 
 
 
@@ -1197,109 +1218,10 @@ namespace vetestervezo
                     //Console.WriteLine("\nösszesen {0} maradt ki.", valasztott.Count);
                 }
 
-                
-
-
-
-
-                /* else
-                 {
-                     if (valasztott.Count != 0)
-                     {
-
-                         List<string> tempSzamok = new List<string>();
-
-                         for (int i = 0; i < tempSzam + 1; i++)
-                         {
-                             tempSzamok.Add("o");
-                         }
-
-                         for (int ii = 0; ii < tempSzamok.Count; ii++)
-                         {
-                             for (int i = 1; i <= hossz; i++)
-                             {
-                                 for (int j = 1; j < szel + 1; j++)
-                                 {
-
-                                     if (valasztott.Count != 0)
-                                     {
-
-
-
-                                         if (valasztott[0] == "kakukkfű")
-                                         {
-                                             Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkGreen; Console.ForegroundColor = ConsoleColor.Green; Console.Write(valasztott[0].Substring(0, 1)); Console.ResetColor();
-
-                                         }
-                                         else if (valasztott[0] == "bazsalikom")
-                                         {
-                                             Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkRed; Console.ForegroundColor = ConsoleColor.Red; Console.Write(valasztott[0].Substring(0, 1)); Console.ResetColor();
-                                         }
-
-
-
-
-
-                                         else
-                                         {
-                                             Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkGray; Console.ForegroundColor = ConsoleColor.Gray; Console.Write(valasztott[0].Substring(0, 1)); Console.ResetColor();
-                                         }
-                                         valasztott.Remove(valasztott[0]);
-
-
-                                     }
-                                     else
-                                     {
-                                         Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("x"); Console.ResetColor();
-                                     }
-
-                                 }
-                                 Console.WriteLine();
-                             }
-                             Console.WriteLine("\n");
-                         }
-                     }
-
-
-
-                     HashSet<string> maradek = new HashSet<string>();
-
-                     for (int i = 0; i < valasztott.Count; i++)
-                     {
-                         maradek.Add(valasztott[i]);
-                     }
-
-
-                     Console.Write("Az ágyások nem elegek az összes növény beültetéséhez.\nÖsszesen {0} maradt ki, ezekből a növényekből:\n - ", valasztott.Count);
-                     Console.Write(string.Join("\n - ", maradek));
-                     //Console.WriteLine("\nösszesen {0} maradt ki.", valasztott.Count);
-
-                 }*/
-
-
-
-
-
-
-                /*if (valasztott[0] == "kakukkfű")
-                {
-                    Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkGreen; Console.ForegroundColor = ConsoleColor.Green; Console.Write("*"); Console.ResetColor();
-                    valasztott.Remove("kakukkfű");
-                    tempSzamok.Remove("o");
-
-                }
-                else if (valasztott[0] == "bazsalikom")
-                {
-                    Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkRed; Console.ForegroundColor = ConsoleColor.Red; Console.Write("*"); Console.ResetColor();
-                    valasztott.Remove("bazsalikom");
-                    tempSzamok.Remove("o");
-                }*/
-
-
             }
 
 
-            if (kezdoValasztas == "U" || kezdoValasztas == "u")
+            /*if (kezdoValasztas == "U" || kezdoValasztas == "u")
             {
                 //Environment.Exit(0);
                 Console.Write("Növény neve: ");
@@ -1322,15 +1244,16 @@ namespace vetestervezo
                 MySqlDataReader MyReader2;
                 MyConn2.Open();
                 MyReader2 = MyCommand2.ExecuteReader();
-            }
+            }*/
             
-            if (kezdoValasztas == "K" && kezdoValasztas == "k")
+            /*if (kezdoValasztas == "K" && kezdoValasztas == "k")
             {
                 Environment.Exit(0);
-            }
+            }*/
 
             //Console.ResetColor(); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\n\nKilépsz? \n"); Console.ResetColor(); Console.Write("(Nyomj meg egy billentyűt)");
             //Console.ReadKey();
+
         }
     }
 }
