@@ -50,6 +50,62 @@ namespace vetestervezo
         static void Main(string[] args)
         {
 
+            Console.SetCursorPosition(Console.WindowWidth / 2, Console.WindowHeight / 2);
+            Console.CursorVisible = false;
+            Console.Write('*');
+
+            var random = new Random();
+
+            while (true)
+            {
+                if (Console.KeyAvailable)
+                {
+                    var key = Console.ReadKey(true);
+
+                    switch (key.Key)
+                    {
+                        case ConsoleKey.UpArrow:
+                            if (Console.CursorTop > 0)
+                            {
+                                Console.SetCursorPosition(Console.CursorLeft - 1,
+                                    Console.CursorTop - 1);
+                                Console.Write('*');
+                            }
+                            break;
+                        case ConsoleKey.DownArrow:
+                            if (Console.CursorTop < Console.BufferHeight)
+                            {
+                                Console.SetCursorPosition(Console.CursorLeft - 1,
+                                    Console.CursorTop + 1);
+                                Console.Write('*');
+                            }
+                            break;
+                        case ConsoleKey.LeftArrow:
+                            if (Console.CursorLeft > 1)
+                            {
+                                Console.SetCursorPosition(Console.CursorLeft - 2,
+                                    Console.CursorTop);
+                                Console.Write('*');
+                            }
+                            break;
+                        case ConsoleKey.RightArrow:
+                            if (Console.CursorLeft < Console.WindowWidth - 1)
+                            {
+                                Console.Write('*');
+                            }
+                            break;
+                    }
+                }
+
+                // This method should be called on every iteration, 
+                // and the iterations should not wait for a key to be pressed
+                // Instead of Frame.Update(), change the foreground color every three seconds  
+                if (DateTime.Now.Second % 3 == 0)
+                    Console.ForegroundColor = (ConsoleColor)random.Next(0, 16);
+            }
+
+
+
             #region Adatbázis
 
             StreamWriter ir = new StreamWriter("adatTeszt.txt");
@@ -147,6 +203,8 @@ namespace vetestervezo
 
             }
 
+
+
             if (kezdoValasztas == "T" || kezdoValasztas == "t")
             {
                 Console.Clear();
@@ -163,11 +221,16 @@ namespace vetestervezo
                 do
                 {
                     Console.ResetColor(); Console.Write("\t- Az ágyások hosszúsága (szám, cm): "); Console.ForegroundColor = ConsoleColor.DarkGreen;
-                } while (!int.TryParse(Console.ReadLine(), out hossz));
+                    hossz = int.Parse(Console.ReadLine());
+                    
+
+                } while (/*!int.TryParse(Console.ReadLine(), out hossz) && */hossz > 28);
                 do
                 {
                     Console.ResetColor(); Console.Write("\t- Az ágyások szélessége (szám, cm): "); Console.ForegroundColor = ConsoleColor.DarkGreen;
-                } while (!int.TryParse(Console.ReadLine(), out szel));
+                    szel = int.Parse(Console.ReadLine());
+                    
+                } while (/*!int.TryParse(Console.ReadLine(), out szel) && */szel > 28);
 
                 Console.ResetColor(); Console.WriteLine("\n");
 
@@ -285,18 +348,18 @@ namespace vetestervezo
 
                         for (int ii = 0; ii < valasztott.Count; ii++)
                         {
-
-                            for (int i = 1; i < szel + 1; i++)
+                            Console.Write("*");
+                            for (int i = 1; i < szel +1; i++)
                             {
-                                Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("óóóó"); Console.ResetColor();
+                                Console.Write("----"); 
                             }
-                            Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("óóóó"); Console.ResetColor();
+                             Console.Write("*");
                             Console.WriteLine();
                             
 
                             for (int i = 1; i <= hossz; i++)
                             {
-                                Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("óó"); Console.ResetColor();
+                                 Console.Write("|"); 
 
                                 for (int j = 1; j < szel + 1; j++)
                                 {
@@ -670,19 +733,20 @@ namespace vetestervezo
                                     }
                                     else
                                     {
-                                        Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("óóóó"); Console.ResetColor();
+                                        Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("áááá"); Console.ResetColor();
                                     }
 
                                 }
-                                Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("óó"); Console.ResetColor();
+                                Console.Write("|");
                                 Console.WriteLine();
                             }
-                            
+
+                            Console.Write("*");
                             for (int i = 1; i < szel + 1; i++)
                             {
-                                Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("óóóó"); Console.ResetColor();
+                                Console.Write("----"); 
                             }
-                            Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("óóóó"); Console.ResetColor();
+                             Console.Write("*"); 
                             Console.WriteLine();
 
                            Console.WriteLine("\n");
