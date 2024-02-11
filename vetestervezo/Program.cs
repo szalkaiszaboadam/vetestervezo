@@ -50,61 +50,21 @@ namespace vetestervezo
         static void Main(string[] args)
         {
 
-            Console.SetCursorPosition(Console.WindowWidth / 2, Console.WindowHeight / 2);
-            Console.CursorVisible = false;
-            Console.Write('*');
+            ConsoleKeyInfo cki;
+            // Prevent example from ending if CTL+C is pressed.
+            Console.TreatControlCAsInput = true;
 
-            var random = new Random();
-
-            while (true)
+            Console.WriteLine("Press any combination of CTL, ALT, and SHIFT, and a console key.");
+            Console.WriteLine("Press the Escape (Esc) key to quit: \n");
+            do
             {
-                if (Console.KeyAvailable)
-                {
-                    var key = Console.ReadKey(true);
-
-                    switch (key.Key)
-                    {
-                        case ConsoleKey.UpArrow:
-                            if (Console.CursorTop > 0)
-                            {
-                                Console.SetCursorPosition(Console.CursorLeft - 1,
-                                    Console.CursorTop - 1);
-                                Console.Write('*');
-                            }
-                            break;
-                        case ConsoleKey.DownArrow:
-                            if (Console.CursorTop < Console.BufferHeight)
-                            {
-                                Console.SetCursorPosition(Console.CursorLeft - 1,
-                                    Console.CursorTop + 1);
-                                Console.Write('*');
-                            }
-                            break;
-                        case ConsoleKey.LeftArrow:
-                            if (Console.CursorLeft > 1)
-                            {
-                                Console.SetCursorPosition(Console.CursorLeft - 2,
-                                    Console.CursorTop);
-                                Console.Write('*');
-                            }
-                            break;
-                        case ConsoleKey.RightArrow:
-                            if (Console.CursorLeft < Console.WindowWidth - 1)
-                            {
-                                Console.Write('*');
-                            }
-                            break;
-                    }
-                }
-
-                // This method should be called on every iteration, 
-                // and the iterations should not wait for a key to be pressed
-                // Instead of Frame.Update(), change the foreground color every three seconds  
-                if (DateTime.Now.Second % 3 == 0)
-                    Console.ForegroundColor = (ConsoleColor)random.Next(0, 16);
-            }
-
-
+                cki = Console.ReadKey();
+                Console.Write(" --- You pressed ");
+                if (cki.Key == ConsoleKey.C) Console.Write("ALT+");
+                if ((cki.Modifiers & ConsoleModifiers.Shift) != 0) Console.Write("SHIFT+");
+                if ((cki.Modifiers & ConsoleModifiers.Control) != 0) Console.Write("CTL+");
+                Console.WriteLine(cki.Key.ToString());
+            } while (cki.Key != ConsoleKey.Escape);
 
             #region Adatbázis
 
@@ -178,7 +138,12 @@ namespace vetestervezo
             Console.Write("\t("); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("U"); Console.ResetColor(); Console.Write(") Új növények feltöltése\n");
             Console.Write("\t("); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("K"); Console.ResetColor(); Console.ResetColor(); Console.Write(") Kilépés\n\n");
 
-            while (true)
+
+
+
+
+
+            /*while (true)
             {
 
                 Console.Write("\t Választásod: "); Console.ForegroundColor = ConsoleColor.Yellow;
@@ -201,7 +166,7 @@ namespace vetestervezo
                     Console.ResetColor(); Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("\t  A rendelkezése álló lehetőségek közül válassz!"); Console.ResetColor();
                 }
 
-            }
+            }*/
 
 
 
@@ -1364,8 +1329,8 @@ namespace vetestervezo
                 Environment.Exit(0);
             }
 
-            Console.ResetColor(); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\n\nKilépsz? "); Console.ResetColor(); Console.Write("(Nyomj meg egy billentyűt)");
-            Console.ReadKey();
+            //Console.ResetColor(); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("\n\nKilépsz? \n"); Console.ResetColor(); Console.Write("(Nyomj meg egy billentyűt)");
+            //Console.ReadKey();
         }
     }
 }
