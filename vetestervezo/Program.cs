@@ -253,30 +253,34 @@ namespace vetestervezo
 
 
                     Console.Clear();
-                    Console.Write("\nÁgyások száma: "); Console.ForegroundColor = ConsoleColor.DarkGreen; Console.Write("{0}\n", agyasokSzama);
-                    Console.ResetColor(); Console.Write("Ágyások hosszúsága: "); Console.ForegroundColor = ConsoleColor.DarkGreen; Console.Write("{0}\n", hossz);
-                    Console.ResetColor(); Console.Write("Ágyások szélessége: "); Console.ForegroundColor = ConsoleColor.DarkGreen; Console.Write("{0}\n\n", szel); Console.ResetColor();
+                    //Console.Write("\nÁgyások száma: "); Console.ForegroundColor = ConsoleColor.DarkGreen; Console.Write("{0}\n", agyasokSzama);
+                    //Console.ResetColor(); Console.Write("Ágyások hosszúsága: "); Console.ForegroundColor = ConsoleColor.DarkGreen; Console.Write("{0}\n", hossz);
+                    //Console.ResetColor(); Console.Write("Ágyások szélessége: "); Console.ForegroundColor = ConsoleColor.DarkGreen; Console.Write("{0}\n\n", szel); Console.ResetColor();
 
 
-                    /* Console.WriteLine("Jelmagyarázat:");
+                     Console.WriteLine("\nJelmagyarázat:\n");
                      Console.ResetColor();
 
-                      Console.BackgroundColor = ConsoleColor.DarkGreen; Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("Bab"); Console.ResetColor();
-                      Console.BackgroundColor = ConsoleColor.DarkRed; Console.ForegroundColor = ConsoleColor.Blue;Console.WriteLine("Bazsalikom"); Console.ResetColor();
-                     Console.BackgroundColor = ConsoleColor.DarkBlue; Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("Borsikafű"); Console.ResetColor();
-                     Console.BackgroundColor = ConsoleColor.DarkYellow; Console.ForegroundColor = ConsoleColor.Blue; Console.WriteLine("Borsó"); Console.ResetColor();
-                      Console.BackgroundColor = ConsoleColor.DarkBlue; Console.ForegroundColor = ConsoleColor.Green;Console.WriteLine("Burgonya"); Console.ResetColor();
-                     Console.BackgroundColor = ConsoleColor.DarkRed; Console.ForegroundColor = ConsoleColor.Yellow; Console.WriteLine("Cékla"); Console.ResetColor();
-                     Console.BackgroundColor = ConsoleColor.DarkYellow; Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("Cukkini"); Console.ResetColor();
-                     Console.BackgroundColor = ConsoleColor.DarkBlue; Console.ForegroundColor = ConsoleColor.Cyan; Console.WriteLine("Fokhagyma"); Console.ResetColor();
-                     Console.BackgroundColor = ConsoleColor.DarkGreen; Console.ForegroundColor = ConsoleColor.Blue; Console.WriteLine("Kakukkfű"); Console.ResetColor();
-                   Console.BackgroundColor = ConsoleColor.DarkMagenta; Console.ForegroundColor = ConsoleColor.Cyan;  Console.WriteLine("Kapor");  Console.ResetColor();
-                    Console.BackgroundColor = ConsoleColor.DarkMagenta; Console.ForegroundColor = ConsoleColor.Green;   Console.WriteLine("Káposzták");Console.ResetColor();
-                      Console.BackgroundColor = ConsoleColor.DarkCyan; Console.ForegroundColor = ConsoleColor.Blue; Console.WriteLine("Karalábé");Console.ResetColor();
-                     Console.BackgroundColor = ConsoleColor.DarkRed; Console.ForegroundColor = ConsoleColor.Cyan; Console.WriteLine("Karfiol"); Console.ResetColor();
-                   Console.BackgroundColor = ConsoleColor.DarkGreen; Console.ForegroundColor = ConsoleColor.Yellow;    Console.WriteLine("Kelbimbó");Console.ResetColor();
-                    Console.BackgroundColor = ConsoleColor.DarkMagenta; Console.ForegroundColor = ConsoleColor.Yellow; Console.WriteLine("Kukorica");  Console.ResetColor();
-                    */
+                    Console.BackgroundColor = ConsoleColor.DarkBlue; Console.ForegroundColor = ConsoleColor.Blue; Console.Write("[BA]"); Console.ResetColor(); Console.Write(" Bab \t"); Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkYellow; Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("[CÉ]"); Console.ResetColor(); Console.Write(" Cékla\t"); Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkMagenta; Console.ForegroundColor = ConsoleColor.Magenta; Console.Write("[KÁ]"); Console.ResetColor(); Console.Write(" Káposzták\n"); Console.ResetColor();
+                    Console.BackgroundColor = ConsoleColor.DarkGreen; Console.ForegroundColor = ConsoleColor.Green; Console.Write("[BA]"); Console.ResetColor(); Console.Write(" Bazsalikom\t"); Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkBlue; Console.ForegroundColor = ConsoleColor.Blue; Console.Write("[CU]"); Console.ResetColor(); Console.Write(" Cukkini\t"); Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkYellow; Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("[KA]"); Console.ResetColor(); Console.Write(" Karalábé\n"); Console.ResetColor();
+                    Console.BackgroundColor = ConsoleColor.DarkCyan; Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("[BO]");  Console.ResetColor(); Console.Write(" Borsikafű\t"); Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkGreen; Console.ForegroundColor = ConsoleColor.Green; Console.Write("[FO]"); Console.ResetColor(); Console.Write(" Fokhagyma\t"); Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkBlue; Console.ForegroundColor = ConsoleColor.Blue; Console.Write("[KA]"); Console.ResetColor(); Console.Write(" Karfiol\n"); Console.ResetColor();
+                    Console.BackgroundColor = ConsoleColor.DarkRed; Console.ForegroundColor = ConsoleColor.Red; Console.Write("[BO]"); Console.ResetColor(); Console.Write(" Borsó\t"); Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkCyan; Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("[KA]"); Console.ResetColor(); Console.Write(" Kakukkfű\t"); Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkGreen; Console.ForegroundColor = ConsoleColor.Green; Console.Write("[KE]"); Console.ResetColor(); Console.Write(" Kelbimbó\n"); Console.ResetColor();
+                    Console.BackgroundColor = ConsoleColor.DarkMagenta; Console.ForegroundColor = ConsoleColor.Magenta; Console.Write("[BU]"); Console.ResetColor(); Console.Write(" Burgonya\t"); Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkRed; Console.ForegroundColor = ConsoleColor.Red; Console.Write("[KA]"); Console.ResetColor(); Console.Write(" Kapor\t"); Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkCyan; Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("[KU]"); Console.ResetColor(); Console.Write(" Kukorica\n"); Console.ResetColor();
+
+
+
+
+
+
+
+
+
+                    
+
+
+
+
+
                     Console.WriteLine("\n");
 
                     int szamolo = 1;
