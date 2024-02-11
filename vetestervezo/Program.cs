@@ -79,7 +79,7 @@ namespace vetestervezo
             string betuk = ""; //BOboCc
             string valaszottNoveny = "";
             int agyasokSzama;
-            int hossz, szel; //ágyások mélysége és szélessége
+            //int /*hossz,*//* szel*/; //ágyások mélysége és szélessége
             string kezdoValasztas = "";
             List<forrasAdat> tesztLista = new List<forrasAdat>();
             List<string> valasztott = new List<string>();
@@ -117,14 +117,14 @@ namespace vetestervezo
 
             Console.WriteLine("\n Üdvözöllek a Vetéstervezőben! \n"); Console.ResetColor();
 
-            Console.Write(" ("); Console.ForegroundColor = ConsoleColor.Green; Console.Write("T"); Console.ResetColor(); Console.Write(") Tervező\n");
-            Console.Write(" ("); Console.ForegroundColor = ConsoleColor.Green; Console.Write("U"); Console.ResetColor(); Console.Write(") Új növények feltöltése\n");
-            Console.Write(" ("); Console.ForegroundColor = ConsoleColor.Green; Console.Write("ESC"); Console.ResetColor(); Console.ResetColor(); Console.Write(") Kilépés\n");
+            Console.Write(" ["); Console.ForegroundColor = ConsoleColor.Green; Console.Write("T"); Console.ResetColor(); Console.Write("] Tervező\n");
+            Console.Write(" ["); Console.ForegroundColor = ConsoleColor.Green; Console.Write("U"); Console.ResetColor(); Console.Write("] Új növények feltöltése\n");
+            Console.Write(" ["); Console.ForegroundColor = ConsoleColor.Green; Console.Write("ESC"); Console.ResetColor(); Console.ResetColor(); Console.Write("] Kilépés\n");
 
             Console.WriteLine("\n *---------------------------* \n"); Console.ResetColor();
 
             ConsoleKeyInfo cki;
-            Console.TreatControlCAsInput = true;
+            //Console.TreatControlCAsInput = true;
 
             do
             {
@@ -158,6 +158,8 @@ namespace vetestervezo
                 {
                     Console.Clear();
 
+                   
+
                     do
                     {
                         Console.ResetColor(); Console.Write("\tElőször kérlek add, hogy hány ágyást szeretnél beültetni (szám): "); Console.ResetColor(); Console.ForegroundColor = ConsoleColor.DarkGreen;
@@ -165,7 +167,15 @@ namespace vetestervezo
 
 
                     Console.ResetColor(); Console.WriteLine("\n\tIlletve kérlek add meg, hogy megkkorák az ágyások");
-                    Console.Write("\t Egy ilyen négyzet: "); Console.ForegroundColor = ConsoleColor.DarkGray; Console.BackgroundColor = ConsoleColor.Gray; Console.Write("N"); Console.ResetColor(); Console.Write(", 20 négyzetcentit és egy növényt mutat.\n\t Kérlek ennek fényében add meg a pontos adatokat!\n");
+                    Console.Write("\t Egy ilyen négyzet: "); Console.ForegroundColor = ConsoleColor.DarkGray; Console.BackgroundColor = ConsoleColor.Gray; Console.Write("[NN]"); Console.ResetColor(); Console.Write(", 20 négyzetcentit és egy növényt mutat.\n\t Kérlek ennek fényében add meg a pontos adatokat!\n");
+
+                    /*Console.WriteLine("sdfsdf");
+                    int hossz = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("dfsdf");
+                    int szel = Convert.ToInt32(Console.ReadLine());*/
+
+                    int hossz;
+                    int szel;
 
                     do
                     {
@@ -173,13 +183,13 @@ namespace vetestervezo
                         hossz = int.Parse(Console.ReadLine());
 
 
-                    } while (/*!int.TryParse(Console.ReadLine(), out hossz) && */hossz > 28);
-                    do
-                    {
-                        Console.ResetColor(); Console.Write("\t- Az ágyások szélessége (szám, cm): "); Console.ForegroundColor = ConsoleColor.DarkGreen;
-                        szel = int.Parse(Console.ReadLine());
+                    } while (hossz > 28);
+                     do
+                     {
+                         Console.ResetColor(); Console.Write("\t- Az ágyások szélessége (szám, cm): "); Console.ForegroundColor = ConsoleColor.DarkGreen;
+                         szel = int.Parse(Console.ReadLine());
 
-                    } while (/*!int.TryParse(Console.ReadLine(), out szel) && */szel > 28);
+                     } while (szel > 28); /*!int.TryParse(Console.ReadLine(), out szel) && */
 
                     Console.ResetColor(); Console.WriteLine("\n");
 
@@ -188,7 +198,7 @@ namespace vetestervezo
 
                     for (int i = 0; i < tesztLista.Count; i++)
                     {
-                        Console.Write("\t - {0} (", tesztLista[i].novenyNeve); Console.ForegroundColor = ConsoleColor.DarkGreen; Console.Write("{0}", tesztLista[i].novenybetuNagy); Console.ResetColor(); Console.Write(")\n");
+                        Console.Write("\t - {0} (", tesztLista[i].novenyNeve); Console.ForegroundColor = ConsoleColor.Green; Console.Write("{0}", tesztLista[i].novenybetuNagy); Console.ResetColor(); Console.Write(")\n");
                     }
 
                     while (true)
