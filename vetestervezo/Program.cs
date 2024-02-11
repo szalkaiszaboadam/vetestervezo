@@ -258,7 +258,7 @@ namespace vetestervezo
                     //Console.ResetColor(); Console.Write("Ágyások szélessége: "); Console.ForegroundColor = ConsoleColor.DarkGreen; Console.Write("{0}\n\n", szel); Console.ResetColor();
 
 
-                     Console.WriteLine("\nJelmagyarázat:\n");
+                     Console.WriteLine("\n*-------------* Jelmagyarázat *-------------*\n");
                      Console.ResetColor();
 
                     Console.BackgroundColor = ConsoleColor.DarkBlue; Console.ForegroundColor = ConsoleColor.Blue; Console.Write("[BA]"); Console.ResetColor(); Console.Write(" Bab \t"); Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkYellow; Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("[CÉ]"); Console.ResetColor(); Console.Write(" Cékla\t"); Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkMagenta; Console.ForegroundColor = ConsoleColor.Magenta; Console.Write("[KÁ]"); Console.ResetColor(); Console.Write(" Káposzták\n"); Console.ResetColor();
@@ -729,15 +729,18 @@ namespace vetestervezo
                             {
 
 
+                                Console.Write("*");
                                 for (int i = 1; i < szel + 1; i++)
                                 {
-                                    Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("óóóó"); Console.ResetColor();
+                                    Console.Write("----");
                                 }
-                                Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("óóóó"); Console.ResetColor();
+                                Console.Write("*");
                                 Console.WriteLine();
 
                                 for (int i = 1; i <= hossz; i++)
                                 {
+                                    Console.Write("|");
+
                                     for (int j = 1; j < szel + 1; j++)
                                     {
 
@@ -867,7 +870,7 @@ namespace vetestervezo
 
 
 
-                                                    Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("óó"); Console.ResetColor();
+                                                    //Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("óó"); Console.ResetColor();
 
 
 
@@ -1139,16 +1142,17 @@ namespace vetestervezo
                                         }
 
                                     }
-                                    Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("óó"); Console.ResetColor();
+                                    Console.Write("|"); 
                                     Console.WriteLine();
                                 }
 
 
+                                Console.Write("*");
                                 for (int i = 1; i < szel + 1; i++)
                                 {
-                                    Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("óóóó"); Console.ResetColor();
+                                    Console.Write("----");
                                 }
-                                Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("óóóó"); Console.ResetColor();
+                                Console.Write("*");
                                 Console.WriteLine();
 
                                 Console.WriteLine("\n");
@@ -1164,9 +1168,9 @@ namespace vetestervezo
                             maradek.Add(valasztott[i].Substring(0, 2));
                         }
 
-                        Console.ResetColor(); Console.ForegroundColor = ConsoleColor.Red;
-                        Console.Write("Az megadott ágyások és növények ezen formájában {0} növény nem ültethező be.\nEzekből a növényekből maradtak ki:\n - ", valasztott.Count);
-                        Console.Write(string.Join("\n - ", maradek));
+                         
+                        Console.Write("["); Console.ResetColor(); Console.ForegroundColor = ConsoleColor.Red; Console.Write("Az megadott ágyások és növények ezen formájában {0} növény\nnem ültethező be. A következő növényekből maradtak ki: ", valasztott.Count); 
+                        Console.Write(string.Join(", ", maradek)); Console.ResetColor(); Console.Write("]\n ");
                         Console.ResetColor();
                         //Console.WriteLine("\nösszesen {0} maradt ki.", valasztott.Count);
 
@@ -1187,9 +1191,9 @@ namespace vetestervezo
                         {
                             maradek2.Add(maradok[i].Substring(0, 2));
                         }
-                        Console.ResetColor(); Console.ForegroundColor = ConsoleColor.Red;
-                        Console.Write("Az ágyások nem elegek az összes növény beültetéséhez.\nÖsszesen {0} maradt ki, ezekből a növényekből:\n - ", maradok.Count);
-                        Console.Write(string.Join("\n - ", maradek2));
+
+                        Console.Write("["); Console.ResetColor(); Console.ForegroundColor = ConsoleColor.Red;  Console.Write("Az ágyások nem elegek az összes növény beültetéséhez.\n Összesen {0} maradt ki, a következő növényfajtákból: ", maradok.Count); 
+                        Console.Write(string.Join(", ", maradek2)); Console.ResetColor(); Console.Write("]\n ");
                         Console.ResetColor();
                         //Console.WriteLine("\nösszesen {0} maradt ki.", valasztott.Count);
                     }
