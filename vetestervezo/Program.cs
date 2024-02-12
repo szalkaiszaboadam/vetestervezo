@@ -78,7 +78,7 @@ namespace vetestervezo
 
             string betuk = ""; //BOboCc
             string valaszottNoveny = "";
-            int agyasokSzama;
+    
             //int /*hossz,*//* szel*/; //ágyások mélysége és szélessége
             string kezdoValasztas = "";
             List<forrasAdat> tesztLista = new List<forrasAdat>();
@@ -158,47 +158,148 @@ namespace vetestervezo
                 {
                     Console.Clear();
 
-                   
 
+                    int hossz = 0;
+                    int szel = 0;
+                    int agyasokSzama = 0;
+
+                    Console.WriteLine("\n Kérjük add meg az ágyások pontos adatait\n");
+                    Console.Write(" * Az ágyások számának megadásához nyomj egy ["); Console.ForegroundColor = ConsoleColor.Green; Console.Write("ENTER"); Console.ResetColor(); Console.Write("]-t\n");
+                    Console.WriteLine(" * Az ágyások hosszúsága: 0");
+                    Console.WriteLine(" * Az ágyások szélessége: 0");
+
+                    Console.Write("\n Egy ilyen négyzet: "); Console.ForegroundColor = ConsoleColor.DarkGray; Console.BackgroundColor = ConsoleColor.Gray; Console.Write("[NN]"); Console.ResetColor(); Console.Write(",\n 20 négyzetcentit és egy növényt mutat.\n");
+
+                    Console.WriteLine("\n *--------------------------------------* \n"); Console.ResetColor();
+
+                    ConsoleKeyInfo cky;
                     do
                     {
-                        Console.ResetColor(); Console.Write("\tElőször kérlek add, hogy hány ágyást szeretnél beültetni (szám): "); Console.ResetColor(); Console.ForegroundColor = ConsoleColor.DarkGreen;
-                    } while (!int.TryParse(Console.ReadLine(), out agyasokSzama));
+                        cky = Console.ReadKey();
+                        if (cky.Key == ConsoleKey.Enter)
+                        {
+                            Console.Clear();
+
+                            Console.WriteLine("\n\n");
+                            do
+                            {
+
+                                Console.ResetColor(); Console.Write(" * Az ágyások száma ["); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("potitív egész szám"); Console.ResetColor(); Console.Write("]: ");
+                            } while (!int.TryParse(Console.ReadLine(), out agyasokSzama));
+
+                            Console.Write("\n A véglegesítéshez nyomj egy ["); Console.ForegroundColor = ConsoleColor.Green; Console.Write("ESC"); Console.ResetColor(); Console.Write("]-t\n");
+
+                        }
+
+                    } while (cky.Key != ConsoleKey.Escape);
 
 
-                    Console.ResetColor(); Console.WriteLine("\n\tIlletve kérlek add meg, hogy megkkorák az ágyások");
-                    Console.Write("\t Egy ilyen négyzet: "); Console.ForegroundColor = ConsoleColor.DarkGray; Console.BackgroundColor = ConsoleColor.Gray; Console.Write("[NN]"); Console.ResetColor(); Console.Write(", 20 négyzetcentit és egy növényt mutat.\n\t Kérlek ennek fényében add meg a pontos adatokat!\n");
+                    Console.Clear();
+                    Console.WriteLine("\n Kérjük add meg az ágyások pontos adatait\n");
+                    Console.WriteLine(" * Az ágyások száma: {0}", agyasokSzama);
+                    Console.Write(" * Az ágyások hosszúságának megadásához nyomj egy ["); Console.ForegroundColor = ConsoleColor.Green; Console.Write("ENTER"); Console.ResetColor(); Console.Write("]-t\n");
+                    Console.WriteLine(" * Az ágyások szélessége: 0");
+
+                    Console.Write("\n Egy ilyen négyzet: "); Console.ForegroundColor = ConsoleColor.DarkGray; Console.BackgroundColor = ConsoleColor.Gray; Console.Write("[NN]"); Console.ResetColor(); Console.Write(",\n 20 négyzetcentit és egy növényt mutat.\n");
+
+                    Console.WriteLine("\n *-------------------------------------* \n"); Console.ResetColor();
+
+                    ConsoleKeyInfo ckyy;
+                    do
+                    {
+                        ckyy = Console.ReadKey();
+                        if (ckyy.Key == ConsoleKey.Enter)
+                        {
+                            Console.Clear();
+
+                            Console.WriteLine("\n\n\n");
+                            do
+                            {
+
+                                Console.ResetColor(); Console.Write(" * Az ágyások hosszúsága ["); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("potitív egész szám, 1-28 között, cm-ben"); Console.ResetColor(); Console.Write("]: ");
+                            } while (!int.TryParse(Console.ReadLine(), out hossz));
+
+                            Console.Write("\n A véglegesítéshez nyomj egy ["); Console.ForegroundColor = ConsoleColor.Green; Console.Write("ESC"); Console.ResetColor(); Console.Write("]-t\n");
+
+                        }
+
+                    } while (ckyy.Key != ConsoleKey.Escape);
+
+                    Console.Clear();
+                    Console.WriteLine("\n Kérjük add meg az ágyások pontos adatait\n");
+                    Console.WriteLine(" * Az ágyások száma: {0}", agyasokSzama);
+                    Console.WriteLine(" * Az ágyások hosszúsága: {0}",hossz);
+                    Console.Write(" * Az ágyások szélességének megadásához nyomj egy ["); Console.ForegroundColor = ConsoleColor.Green; Console.Write("ENTER"); Console.ResetColor(); Console.Write("]-t\n");
+
+                    Console.Write("\n Egy ilyen négyzet: "); Console.ForegroundColor = ConsoleColor.DarkGray; Console.BackgroundColor = ConsoleColor.Gray; Console.Write("[NN]"); Console.ResetColor(); Console.Write(",\n 20 négyzetcentit és egy növényt mutat.\n");
+
+                    Console.WriteLine("\n *-------------------------------------* \n"); Console.ResetColor();
+
+                    ConsoleKeyInfo ckyyy;
+                    do
+                    {
+                        ckyyy = Console.ReadKey();
+                        if (ckyyy.Key == ConsoleKey.Enter)
+                        {
+                            Console.Clear();
+
+                            Console.WriteLine("\n\n\n\n");
+                            do
+                            {
+
+                                Console.ResetColor(); Console.Write(" * Az ágyások szélessége ["); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("potitív egész szám, 1-28 között, cm-ben"); Console.ResetColor(); Console.Write("]: ");
+                            } while (!int.TryParse(Console.ReadLine(), out szel));
+
+                            Console.Write("\n A véglegesítéshez nyomj egy ["); Console.ForegroundColor = ConsoleColor.Green; Console.Write("ESC"); Console.ResetColor(); Console.Write("]-t\n");
+
+                        }
+
+                    } while (ckyyy.Key != ConsoleKey.Escape);
+
+                    Console.Clear();
+                    Console.WriteLine("\n Kérjük add meg az ágyások pontos adatait\n");
+                    Console.WriteLine(" * Az ágyások száma: {0}", agyasokSzama);
+                    Console.WriteLine(" * Az ágyások hosszúsága: {0}", hossz);
+                    Console.WriteLine(" * Az ágyások szélessége: {0}", szel);
+
+                    Console.Write("\n A növények kiválasztásához nyomj egy ["); Console.ForegroundColor = ConsoleColor.Green; Console.Write("ENTER"); Console.ResetColor(); Console.Write("]-t\n");
+
+                    Console.WriteLine("\n *-------------------------------------* \n"); Console.ResetColor();
+
+                    // Console.WriteLine("\n\tIlletve kérlek add meg, hogy megkkorák az ágyások");
+
 
                     /*Console.WriteLine("sdfsdf");
                     int hossz = Convert.ToInt32(Console.ReadLine());
                     Console.WriteLine("dfsdf");
                     int szel = Convert.ToInt32(Console.ReadLine());*/
 
-                    int hossz;
-                    int szel;
 
-                    do
+
+                    /*do
                     {
-                        Console.ResetColor(); Console.Write("\t- Az ágyások hosszúsága (szám, cm): "); Console.ForegroundColor = ConsoleColor.DarkGreen;
+                        Console.ResetColor(); Console.Write("\t* Az ágyások hosszúsága ["); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("cm"); Console.ResetColor(); Console.Write("]: ");
                         hossz = int.Parse(Console.ReadLine());
 
 
                     } while (hossz > 28);
                      do
                      {
-                         Console.ResetColor(); Console.Write("\t- Az ágyások szélessége (szám, cm): "); Console.ForegroundColor = ConsoleColor.DarkGreen;
-                         szel = int.Parse(Console.ReadLine());
+                         Console.ResetColor(); Console.Write("\t* Az ágyások szélessége (cm): "); Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("cm"); Console.ResetColor(); Console.Write("]: ");
+                        szel = int.Parse(Console.ReadLine());
 
-                     } while (szel > 28); /*!int.TryParse(Console.ReadLine(), out szel) && */
+                     } while (szel > 28);*/
+                    /*!int.TryParse(Console.ReadLine(), out szel) && */
 
-                    Console.ResetColor(); Console.WriteLine("\n");
+                    //Console.ResetColor(); Console.WriteLine("\n");
 
+                    //Console.Clear();
 
-                    Console.Write("\n\tMost pedig válaszd ki, hogy milyen növényeket szeretnél elülteni:\n\t - Kilépés ("); Console.ForegroundColor = ConsoleColor.DarkGreen; Console.Write("0"); Console.ResetColor(); Console.Write(")\n\n");
+                    Console.Write("\nMost pedig válaszd ki, hogy milyen növényeket szeretnél elülteni:\n\t - Kilépés ("); Console.ForegroundColor = ConsoleColor.DarkGreen; Console.Write("0"); Console.ResetColor(); Console.Write(")\n\n");
 
                     for (int i = 0; i < tesztLista.Count; i++)
                     {
-                        Console.Write("\t - {0} (", tesztLista[i].novenyNeve); Console.ForegroundColor = ConsoleColor.Green; Console.Write("{0}", tesztLista[i].novenybetuNagy); Console.ResetColor(); Console.Write(")\n");
+                        Console.Write(" ["); Console.ForegroundColor = ConsoleColor.Green; Console.Write("{0}", tesztLista[i].novenybetuNagy); Console.ResetColor(); Console.Write("] {0}\n", tesztLista[i].novenyNeve);
                     }
 
                     while (true)
