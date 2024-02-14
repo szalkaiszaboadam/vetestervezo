@@ -163,6 +163,7 @@ namespace vetestervezo
                     int szel = 0;
                     int agyasokSzama = 0;
 
+
                     Console.WriteLine("\n Kérjük add meg az ágyások pontos adatait\n");
                     Console.Write(" * Az ágyások számának megadásához nyomj egy ["); Console.ForegroundColor = ConsoleColor.Green; Console.Write("ENTER"); Console.ResetColor(); Console.Write("]-t\n");
                     Console.WriteLine(" * Az ágyások hosszúsága: 0");
@@ -293,73 +294,93 @@ namespace vetestervezo
 
                     //Console.ResetColor(); Console.WriteLine("\n");
 
-                    //Console.Clear();
+                    Console.Clear();
 
-                    Console.Write("\nMost pedig válaszd ki, hogy milyen növényeket szeretnél elülteni:\n\t - Kilépés ("); Console.ForegroundColor = ConsoleColor.DarkGreen; Console.Write("0"); Console.ResetColor(); Console.Write(")\n\n");
+                    Console.Write("\n Most pedig válaszd ki, hogy milyen\n növényeket szeretnél elülteni\n\n"); 
 
                     for (int i = 0; i < tesztLista.Count; i++)
                     {
                         Console.Write(" ["); Console.ForegroundColor = ConsoleColor.Green; Console.Write("{0}", tesztLista[i].novenybetuNagy); Console.ResetColor(); Console.Write("] {0}\n", tesztLista[i].novenyNeve);
                     }
 
-                    while (true)
+
+                    Console.Write("\n ["); Console.ForegroundColor = ConsoleColor.Green; Console.Write("ESC"); Console.ResetColor(); Console.Write("] Véglegesítés\n");
+
+
+                    Console.Write("\n Növény hozzáadásához nyomj egy [");  Console.ForegroundColor = ConsoleColor.Green; Console.Write("ENTER"); Console.ResetColor(); Console.Write("]-t\n");
+
+                    //while (true)
+                    //{
+                    ConsoleKeyInfo ckyyyy;
+                    do
                     {
-                        Console.ResetColor();
-                        Console.Write("\n\t - ");
-                        Console.ResetColor(); Console.ForegroundColor = ConsoleColor.DarkGreen; valaszottNoveny = Console.ReadLine();
-                        Console.ResetColor();
 
 
-                        if (betuk.Contains(valaszottNoveny))
+
+                        ckyyyy = Console.ReadKey();
+                        if (ckyyyy.Key == ConsoleKey.Enter)
                         {
-                            //break;
-                            string tempNoveny = "";
-                            string tempSzzereti = "";
-                            for (int i = 0; i < tesztLista.Count; i++)
+                            Console.ResetColor();
+                            Console.Write("\n * Elültetendő növény neve: ");
+                            Console.ResetColor(); Console.ForegroundColor = ConsoleColor.DarkGreen; valaszottNoveny = Console.ReadLine();
+                            Console.ResetColor();
+
+
+                            if (betuk.Contains(valaszottNoveny))
                             {
-                                if (valaszottNoveny == tesztLista[i].novenybetuNagy || valaszottNoveny == tesztLista[i].novenybetuKicsi)
+                                //break;
+                                string tempNoveny = "";
+                                string tempSzzereti = "";
+                                for (int i = 0; i < tesztLista.Count; i++)
                                 {
-                                    tempNoveny = tesztLista[i].novenyNeve;
-                                    tempSzzereti = tesztLista[i].szereti;
+                                    if (valaszottNoveny == tesztLista[i].novenybetuNagy || valaszottNoveny == tesztLista[i].novenybetuKicsi)
+                                    {
+                                        tempNoveny = tesztLista[i].novenyNeve;
+                                        tempSzzereti = tesztLista[i].szereti;
+                                    }
                                 }
+
+                                int tempnovenyekSzama = 0;
+
+                                do
+                                {
+                                    Console.ResetColor(); Console.Write(" * Mennyit szeretnél elülteni: ", tempNoveny); Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                } while (!int.TryParse(Console.ReadLine(), out tempnovenyekSzama));
+                                Console.ResetColor();
+                                Console.Write("\n  ["); Console.ForegroundColor = ConsoleColor.Green; Console.Write("ENTER"); Console.ResetColor(); Console.Write("] Újabb növény hozzáadása\n");
+                                Console.Write("  ["); Console.ForegroundColor = ConsoleColor.Green; Console.Write("ESC"); Console.ResetColor(); Console.Write("] Véglegesítés\n");
+
+                                tempNoveny = tempNoveny.ToUpper();
+
+                                for (int i = 0; i < tempnovenyekSzama; i++)
+                                {
+                                    valasztott.Add(tempNoveny + ";" + tempSzzereti);
+                                    valasztottAllando.Add(tempNoveny + ";" + tempSzzereti);
+                                }
+
+
                             }
-
-                            int tempnovenyekSzama = 0;
-
-                            do
+                            if (valaszottNoveny == "0" || valaszottNoveny == "0")
                             {
-                                Console.ResetColor(); Console.Write("\tAdd meg mennyi {0}-t szeretnél elültetni: ", tempNoveny); Console.ForegroundColor = ConsoleColor.DarkGreen;
-                            } while (!int.TryParse(Console.ReadLine(), out tempnovenyekSzama));
-
-                            tempNoveny = tempNoveny.ToUpper();
-
-                            for (int i = 0; i < tempnovenyekSzama; i++)
-                            {
-                                valasztott.Add(tempNoveny + ";" + tempSzzereti);
-                                valasztottAllando.Add(tempNoveny + ";" + tempSzzereti);
+                                break;
                             }
+                            /*else
+                            {
+                                Console.ResetColor(); Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("\t  A rendelkezése álló lehetőségek közül válassz!"); Console.ResetColor();
+                            }*/
 
-
+                            //}
                         }
-                        if (valaszottNoveny == "0" || valaszottNoveny == "0")
-                        {
-                            break;
-                        }
-                        /*else
-                        {
-                            Console.ResetColor(); Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("\t  A rendelkezése álló lehetőségek közül válassz!"); Console.ResetColor();
-                        }*/
+                        } while (ckyyyy.Key != ConsoleKey.Escape);
 
-                    }
-
-
-                    Console.Clear();
+                        Console.Clear();
                     //Console.Write("\nÁgyások száma: "); Console.ForegroundColor = ConsoleColor.DarkGreen; Console.Write("{0}\n", agyasokSzama);
                     //Console.ResetColor(); Console.Write("Ágyások hosszúsága: "); Console.ForegroundColor = ConsoleColor.DarkGreen; Console.Write("{0}\n", hossz);
                     //Console.ResetColor(); Console.Write("Ágyások szélessége: "); Console.ForegroundColor = ConsoleColor.DarkGreen; Console.Write("{0}\n\n", szel); Console.ResetColor();
 
-
-                     Console.WriteLine("\n*-------------* Jelmagyarázat *-------------*\n");
+                    Console.ResetColor();
+     
+                    Console.WriteLine("\n*-------------* Jelmagyarázat *-------------*\n");
                      Console.ResetColor();
 
                     Console.BackgroundColor = ConsoleColor.DarkBlue; Console.ForegroundColor = ConsoleColor.Blue; Console.Write("[BA]"); Console.ResetColor(); Console.Write(" Bab \t"); Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkYellow; Console.ForegroundColor = ConsoleColor.Yellow; Console.Write("[CÉ]"); Console.ResetColor(); Console.Write(" Cékla\t"); Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkMagenta; Console.ForegroundColor = ConsoleColor.Magenta; Console.Write("[KÁ]"); Console.ResetColor(); Console.Write(" Káposzták\n"); Console.ResetColor();
