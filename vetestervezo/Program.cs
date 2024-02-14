@@ -131,20 +131,26 @@ namespace vetestervezo
                 cki = Console.ReadKey();
                 if (cki.Key == ConsoleKey.U)
                 {
-                    Console.Clear();
 
-                    Console.Write("Növény neve: ");
+                    Console.Clear();
+                    Console.WriteLine("\n Növény hozzáadása\n");
+
+
+                    Console.ResetColor();  Console.Write(" * Növény neve: "); Console.ForegroundColor = ConsoleColor.Green;
                     string novenyneve = Console.ReadLine();
-                    Console.Write("Kisbetű rövidítés: ");
+                    Console.ResetColor();  Console.Write(" * Kisbetűs rövidítées: "); Console.ForegroundColor = ConsoleColor.Green;
                     string kisbetu = Console.ReadLine();
-                    Console.Write("Nagybetű rövidítés: ");
+                    Console.ResetColor();  Console.Write(" * Nagybetűs rövidítése: "); Console.ForegroundColor = ConsoleColor.Green;
                     string nagybetu = Console.ReadLine();
-                    Console.Write("Szereti(zöldségek): ");
+                    Console.ResetColor();  Console.Write(" * Szereti(zöldségek): "); Console.ForegroundColor = ConsoleColor.Green;
                     string szereti = Console.ReadLine();
-                    Console.Write("Nem szereti(zöldségek): ");
+                    Console.ResetColor();  Console.Write(" * Nem szereti(zöldségek): "); Console.ForegroundColor = ConsoleColor.Green;
                     string nemszereti = Console.ReadLine();
 
+                    Console.ResetColor();
+                    Console.Write("\n ["); Console.ForegroundColor = ConsoleColor.Green; Console.Write("ESC"); Console.ResetColor(); Console.Write("] Véglegesítés\n");
 
+                    Console.WriteLine("\n *--------------------------------------* \n"); Console.ResetColor();
 
 
                     string Query = "INSERT INTO novenyek(novenyNeve,novenybetuNagy,novenybetuKicsi,szereti,nemszereti) VALUES('" + novenyneve + "','" + nagybetu + "','" + kisbetu + "','" + szereti + "','" + nemszereti + "');";
