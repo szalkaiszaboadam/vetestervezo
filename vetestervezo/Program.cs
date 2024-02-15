@@ -148,9 +148,10 @@ namespace vetestervezo
                     string nemszereti = Console.ReadLine();
 
                     Console.ResetColor();
-                    Console.Write("\n ["); Console.ForegroundColor = ConsoleColor.Green; Console.Write("ESC"); Console.ResetColor(); Console.Write("] Véglegesítés\n");
+                    Console.Write("\n ["); Console.ForegroundColor = ConsoleColor.Green; Console.Write("ENTER"); Console.ResetColor(); Console.Write("] Véglegesítés\n");
+                    Console.ReadKey();
 
-                    Console.WriteLine("\n *--------------------------------------* \n"); Console.ResetColor();
+                    //Console.WriteLine("\n *--------------------------------------* \n"); Console.ResetColor();
 
 
                     string Query = "INSERT INTO novenyek(novenyNeve,novenybetuNagy,novenybetuKicsi,szereti,nemszereti) VALUES('" + novenyneve + "','" + nagybetu + "','" + kisbetu + "','" + szereti + "','" + nemszereti + "');";
@@ -159,6 +160,16 @@ namespace vetestervezo
                     MySqlDataReader MyReader2;
                     MyConn2.Open();
                     MyReader2 = MyCommand2.ExecuteReader();
+
+                    Console.Clear();
+                    Console.WriteLine("\n Üdvözöllek a Vetéstervezőben! \n"); Console.ResetColor();
+
+                    Console.Write(" ["); Console.ForegroundColor = ConsoleColor.Green; Console.Write("T"); Console.ResetColor(); Console.Write("] Tervező\n");
+                    Console.Write(" ["); Console.ForegroundColor = ConsoleColor.Green; Console.Write("U"); Console.ResetColor(); Console.Write("] Új növények feltöltése\n");
+                    Console.Write(" ["); Console.ForegroundColor = ConsoleColor.Green; Console.Write("ESC"); Console.ResetColor(); Console.ResetColor(); Console.Write("] Kilépés\n");
+
+                    Console.WriteLine("\n *---------------------------* \n"); Console.ResetColor();
+
                 }
                 if (cki.Key == ConsoleKey.T)
                 {

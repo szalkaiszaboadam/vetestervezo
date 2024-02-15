@@ -15,3 +15,5 @@ kelbimbó;KB;kb;babbazsalikomborsikafűborsóburgonyacéklacukkinifokhagymakakuk
 kukorica;KK;kk;babbazsalikomborsikafűborsóburgonyacéklacukkinifokhagymakakukkfűkaporkáposztákkaralábékarfiolelbimbókukorica;
 Gyökér;GY;gy;sdfsdfsdf;sdfsdfsdf
 dfsdf;23;34;21dfg;dgdfg
+t;t;t;t;t
+;t;t;t;t
