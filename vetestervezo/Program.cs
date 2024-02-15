@@ -582,11 +582,11 @@ namespace vetestervezo
 
                                                 }
                                                 
-                                                /*else if ()
+                                                else if (valasztott[0].Contains(valasztott[0]) && valasztottAllando[szamolo].Contains(valasztott[0]))
                                                 {
-                                                    Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkCyan; Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("[" + valasztott[0].Substring(0, 2) + "]"); Console.ResetColor();
+                                                    Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkGray; Console.ForegroundColor = ConsoleColor.Gray; Console.Write("[" + valasztott[0].Substring(0, 2) + "]"); Console.ResetColor();
                                                     valasztott.Remove(valasztott[0]);
-                                                }*/
+                                                }
 
 
                                                 else
@@ -704,7 +704,12 @@ namespace vetestervezo
 
                                                     }
 
+                                                    else if (valasztott[0].Contains(valasztott[0]) && valasztottAllando[szamoloFelul - szel].Contains(valasztott[0])) //valasztott[0].ToLower() //valasztott[0] !!!
+                                                    {
+                                                        Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkGray; Console.ForegroundColor = ConsoleColor.Gray; Console.Write("[" + valasztott[0].Substring(0, 2) + "]"); Console.ResetColor();
+                                                        valasztott.Remove(valasztott[0]);
 
+                                                    }
 
 
                                                     else
@@ -824,6 +829,13 @@ namespace vetestervezo
 
                                                     }
 
+
+                                                    else if (valasztott[0].Contains(valasztott[0]) && valasztottAllando[((szamoloFelul - j) - szel) + j].Contains(valasztott[0]) && valasztottAllando[szamoloFelul - 1].Contains(valasztott[0]))
+                                                    {
+                                                        Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkGray; Console.ForegroundColor = ConsoleColor.Gray; Console.Write("[" + valasztott[0].Substring(0, 2) + "]"); Console.ResetColor();
+                                                        valasztott.Remove(valasztott[0]);
+
+                                                    }
 
                                                     else
                                                     {
@@ -1005,6 +1017,14 @@ namespace vetestervezo
                                                     kuki.Remove(kuki[0]);
                                                 }
 
+                                                else if (valasztott[0].Contains(valasztott[0]) && valasztottAllando[szamolo].Contains(valasztott[0]))
+                                                {
+                                                    Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkGray; Console.ForegroundColor = ConsoleColor.Gray; Console.Write("[" + valasztott[0].Substring(0, 2) + "]"); Console.ResetColor();
+                                                    valasztott.Remove(valasztott[0]);
+                                                    kuki.Remove(kuki[0]);
+                                                }
+
+
                                                 else
                                                 {
                                                     Console.ResetColor(); Console.BackgroundColor = ConsoleColor.White; Console.ForegroundColor = ConsoleColor.White; Console.Write("éééé"); Console.ResetColor();
@@ -1126,7 +1146,12 @@ namespace vetestervezo
                                                     }
 
 
-
+                                                    else if (valasztott[0].Contains(valasztott[0]) && valasztottAllando[szamoloFelul - szel].Contains(valasztott[0])) //valasztott[0].ToLower() //valasztott[0] !!!
+                                                    {
+                                                        Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkGray; Console.ForegroundColor = ConsoleColor.Gray; Console.Write("[" + valasztott[0].Substring(0, 2) + "]"); Console.ResetColor();
+                                                        valasztott.Remove(valasztott[0]);
+                                                        kuki.Remove(kuki[0]);
+                                                    }
 
 
 
@@ -1260,6 +1285,12 @@ namespace vetestervezo
 
 
 
+                                                    else if (valasztott[0].Contains(valasztott[0]) && valasztottAllando[((szamoloFelul - j) - szel) + j].Contains(valasztott[0]) && valasztottAllando[szamoloFelul - 1].Contains(valasztott[0]))
+                                                    {
+                                                        Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkGray; Console.ForegroundColor = ConsoleColor.Gray; Console.Write("[" + valasztott[0].Substring(0, 2) + "]"); Console.ResetColor();
+                                                        valasztott.Remove(valasztott[0]);
+                                                        kuki.Remove(kuki[0]);
+                                                    }
 
 
 

@@ -24,3 +24,5 @@ as;as;as;as;as
 öü;öü;öü;öü;öü
 óú;óú;óú;óú;óú
 áű;áű;áű;áű;áű
+Örmény;ÖR;ör;cékla;bab
+zuzu;ZU;zu;zuzucékla;bab
