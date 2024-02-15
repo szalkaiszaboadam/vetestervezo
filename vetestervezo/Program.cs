@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI;
 using Org.BouncyCastle.Asn1.Esf;
 using Spire.Pdf.Exporting.XPS.Schema;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace vetestervezo
 {
@@ -151,6 +153,8 @@ namespace vetestervezo
                     Console.Write("\n ["); Console.ForegroundColor = ConsoleColor.Green; Console.Write("ENTER"); Console.ResetColor(); Console.Write("] Véglegesítés\n");
                     Console.ReadKey();
 
+                    betuk += nagybetu + kisbetu;
+
                     //Console.WriteLine("\n *--------------------------------------* \n"); Console.ResetColor();
 
 
@@ -161,14 +165,21 @@ namespace vetestervezo
                     MyConn2.Open();
                     MyReader2 = MyCommand2.ExecuteReader();
 
-                    Console.Clear();
-                    Console.WriteLine("\n Üdvözöllek a Vetéstervezőben! \n"); Console.ResetColor();
+                    
 
-                    Console.Write(" ["); Console.ForegroundColor = ConsoleColor.Green; Console.Write("T"); Console.ResetColor(); Console.Write("] Tervező\n");
-                    Console.Write(" ["); Console.ForegroundColor = ConsoleColor.Green; Console.Write("U"); Console.ResetColor(); Console.Write("] Új növények feltöltése\n");
-                    Console.Write(" ["); Console.ForegroundColor = ConsoleColor.Green; Console.Write("ESC"); Console.ResetColor(); Console.ResetColor(); Console.Write("] Kilépés\n");
+                    var fileName = Assembly.GetExecutingAssembly().Location;
+                    System.Diagnostics.Process.Start(fileName);
 
-                    Console.WriteLine("\n *---------------------------* \n"); Console.ResetColor();
+                    Environment.Exit(0);
+
+                    /* Console.Clear();
+                     Console.WriteLine("\n Üdvözöllek a Vetéstervezőben! \n"); Console.ResetColor();
+
+                     Console.Write(" ["); Console.ForegroundColor = ConsoleColor.Green; Console.Write("T"); Console.ResetColor(); Console.Write("] Tervező\n");
+                     Console.Write(" ["); Console.ForegroundColor = ConsoleColor.Green; Console.Write("U"); Console.ResetColor(); Console.Write("] Új növények feltöltése\n");
+                     Console.Write(" ["); Console.ForegroundColor = ConsoleColor.Green; Console.Write("ESC"); Console.ResetColor(); Console.ResetColor(); Console.Write("] Kilépés\n");
+
+                     Console.WriteLine("\n *---------------------------* \n"); Console.ResetColor();*/
 
                 }
                 if (cki.Key == ConsoleKey.T)
@@ -570,7 +581,12 @@ namespace vetestervezo
                                                     valasztott.Remove(valasztott[0]);
 
                                                 }
-
+                                                
+                                                /*else if ()
+                                                {
+                                                    Console.ResetColor(); Console.BackgroundColor = ConsoleColor.DarkCyan; Console.ForegroundColor = ConsoleColor.Cyan; Console.Write("[" + valasztott[0].Substring(0, 2) + "]"); Console.ResetColor();
+                                                    valasztott.Remove(valasztott[0]);
+                                                }*/
 
 
                                                 else
